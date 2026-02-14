@@ -199,9 +199,9 @@ BOOKS = [
         'note': 'By far the best book on investing ever written. The foundation of value investing.',
     },
     {
-        'title': 'The Outsiders',
-        'author': 'William Thorndike',
-        'note': 'Eight unconventional CEOs who outperformed by thinking about capital allocation differently.',
+        'title': 'Shoe Dog',
+        'author': 'Phil Knight',
+        'note': 'The raw, honest story of building Nike from nothing. A masterclass in grit and perseverance.',
     },
     {
         'title': 'Influence',
@@ -219,14 +219,14 @@ BOOKS = [
         'note': 'A synthesis of mental models with biology, psychology, and physics.',
     },
     {
-        'title': 'Business Adventures',
-        'author': 'John Brooks',
-        'note': 'Timeless stories about corporate ambition and failure. Still relevant decades later.',
+        'title': 'Meditations',
+        'author': 'Marcus Aurelius',
+        'note': 'Private journals of a Roman emperor. Timeless wisdom on discipline, perspective, and self-control.',
     },
     {
-        'title': 'The Most Important Thing',
-        'author': 'Howard Marks',
-        'note': 'Second-level thinking and risk management. Worth reading twice.',
+        'title': 'Thinking, Fast and Slow',
+        'author': 'Daniel Kahneman',
+        'note': 'How the two systems in your brain shape every decision you make. Changes how you think about thinking.',
     },
     {
         'title': 'Where Are the Customers\' Yachts?',

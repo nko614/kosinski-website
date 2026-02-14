@@ -7,18 +7,7 @@
     <h1 class="page-title">Projects</h1>
     <p class="page-subtitle">Things I've built.</p>
 
-    <h2 class="projects-section-title">Web Apps</h2>
-    <div class="projects-list">
-        {% for project in web_apps %}
-        <{% if project.url %}a href="{{ project.url }}" target="_blank"{% else %}div{% endif %} class="project-item">
-            <div class="project-name">{{ project.name }}</div>
-            <div class="project-desc">{{ project.desc }}</div>
-            {% if project.url %}<span class="project-arrow">&rarr;</span>{% endif %}
-        </{% if project.url %}a{% else %}div{% endif %}>
-        {% endfor %}
-    </div>
-
-    <h2 class="projects-section-title">Odoo Apps</h2>
+    <h2 class="projects-section-title odoo-logo-title"><img src="{{ url_for('static', filename='images/odoo-logo.png') }}" alt="Odoo" class="odoo-title-logo"> Apps</h2>
     <div class="odoo-apps-grid">
         {% for app in odoo_apps %}
         <div class="odoo-app-card" onclick="openAppModal('{{ app.name }}', '{{ app.price }}', '{{ app.desc }}')">
@@ -32,6 +21,17 @@
 
     <div class="odoo-apps-cta">
         <p>Don't see what you need? <a href="mailto:nicholas.kosinski614@gmail.com">Email nicholas.kosinski614@gmail.com</a> to request a custom app.</p>
+    </div>
+
+    <h2 class="projects-section-title">Web Apps</h2>
+    <div class="projects-list">
+        {% for project in web_apps %}
+        <{% if project.url %}a href="{{ project.url }}" target="_blank"{% else %}div{% endif %} class="project-item">
+            <div class="project-name">{{ project.name }}</div>
+            <div class="project-desc">{{ project.desc }}</div>
+            {% if project.url %}<span class="project-arrow">&rarr;</span>{% endif %}
+        </{% if project.url %}a{% else %}div{% endif %}>
+        {% endfor %}
     </div>
 
     <div class="app-modal-overlay" id="appModal" onclick="closeAppModal(event)">

@@ -1008,6 +1008,18 @@ a.project-item:hover .project-arrow {
     margin-top: auto;
 }
 
+.odoo-logo-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.odoo-title-logo {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+}
+
 /* Odoo Apps CTA */
 
 .odoo-apps-cta {

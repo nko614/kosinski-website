@@ -834,6 +834,8 @@ a.project-item:hover .project-arrow {
     padding: 24px;
     cursor: pointer;
     transition: border-color 0.2s, background 0.2s;
+    display: flex;
+    flex-direction: column;
 }
 
 .odoo-app-card:hover {
@@ -857,12 +859,14 @@ a.project-item:hover .project-arrow {
     color: var(--text-dim);
     line-height: 1.6;
     margin-bottom: 16px;
+    flex: 1;
 }
 
 .odoo-app-price {
     font-size: 18px;
     font-weight: 700;
     color: #3a7bc8;
+    margin-top: auto;
 }
 
 /* App Modal */

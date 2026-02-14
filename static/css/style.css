@@ -335,13 +335,15 @@ main {
     bottom: 0;
     left: 0;
     width: 100%;
-    background: black;
+    background: #111;
     color: white;
     border: none;
+    border-top: 1px solid #333;
     font-family: var(--font-mono);
-    font-size: 15px;
-    padding: 8px;
+    font-size: 16px;
+    padding: 12px 16px;
     opacity: 0;
+    pointer-events: none;
 }
 
 /* ---- Blog ---- */
@@ -1445,6 +1447,18 @@ footer a:hover {
 
     .terminal-container {
         top: 52px;
+        bottom: 48px;
+    }
+
+    #terminal {
+        padding-bottom: 60px;
+    }
+
+    #mobileInput {
+        opacity: 1;
+        pointer-events: auto;
+        z-index: 50;
+        height: 48px;
     }
 
     .featured-links {

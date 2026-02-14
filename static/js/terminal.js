@@ -286,4 +286,13 @@ terminal.addEventListener('touchstart', function(e) {
 
 if (isMobile) {
     mobileInput.focus();
+    // Keep prompt visible when keyboard opens
+    window.addEventListener('resize', function() {
+        terminal.scrollTop = terminal.scrollHeight;
+    });
+    mobileInput.addEventListener('focus', function() {
+        setTimeout(function() {
+            terminal.scrollTop = terminal.scrollHeight;
+        }, 300);
+    });
 }

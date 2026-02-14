@@ -247,6 +247,48 @@ WEB_APPS = [
 
 ODOO_APPS = [
     {
+        'name': 'Salesforce Integration',
+        'desc': 'Sync leads, contacts, and opportunities between Salesforce CRM and Odoo in real time.',
+        'price': '$2,999',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M10.05 5.64c.66-.7 1.58-1.14 2.6-1.14 1.3 0 2.43.7 3.06 1.73.54-.24 1.13-.37 1.75-.37 2.4 0 4.34 1.95 4.34 4.36 0 2.4-1.95 4.35-4.34 4.35-.28 0-.56-.03-.82-.08-.52 1.17-1.7 1.98-3.06 1.98-.44 0-.86-.09-1.24-.25-.56 1.34-1.87 2.28-3.41 2.28-1.55 0-2.87-.95-3.42-2.3-.2.03-.41.05-.63.05-2.13 0-3.88-1.75-3.88-3.88 0-1.53.9-2.86 2.19-3.48-.12-.4-.18-.82-.18-1.26C2.99 5.55 4.94 3.5 7.35 3.5c1.31 0 2.15.58 2.7 2.14z" fill="#00A1E0"/></svg>',
+    },
+    {
+        'name': 'NetSuite Migration Tool',
+        'desc': 'Structured data migration from NetSuite to Odoo — customers, items, transactions, and history.',
+        'price': '$2,999',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" fill="#1B3A55"/><path d="M17 4l3 4-3 4" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 12l-3 4 3 4" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    },
+    {
+        'name': 'QuickBooks Integration',
+        'desc': 'Sync invoices, payments, chart of accounts, and journal entries between QuickBooks and Odoo.',
+        'price': '$1,899',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#2CA01C"/><path d="M9.5 8v8h1.5v-2.5h1c1.93 0 3.5-1.57 3.5-3.5v-.5C15.5 8 14.5 8 14 8H9.5zm1.5 1.5h2c.55 0 1 .45 1 1s-.45 1-1 1h-2v-2z" fill="#2CA01C"/></svg>',
+    },
+    {
+        'name': 'HubSpot Integration',
+        'desc': 'Push Odoo contacts and deals to HubSpot, and pull marketing data back into Odoo.',
+        'price': '$1,899',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="15" cy="9.5" r="2.5" stroke="#FF7A59" stroke-width="2" fill="none"/><circle cx="9" cy="14.5" r="2" stroke="#FF7A59" stroke-width="2" fill="none"/><circle cx="18" cy="17" r="1.5" fill="#FF7A59"/><circle cx="6" cy="6" r="1.5" fill="#FF7A59"/><line x1="13" y1="11" x2="10.5" y2="13" stroke="#FF7A59" stroke-width="1.5"/><line x1="17" y1="11.5" x2="17.5" y2="15.5" stroke="#FF7A59" stroke-width="1.5"/><line x1="7.5" y1="7.5" x2="8" y2="12.5" stroke="#FF7A59" stroke-width="1.5"/></svg>',
+    },
+    {
+        'name': 'Shopify Integration',
+        'desc': 'Two-way sync of products, orders, inventory, and customers between Shopify and Odoo.',
+        'price': '$1,299',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M15.34 3.04c-.07-.04-.14-.02-.18.04l-1.47 2.71-.63-.17s-.16-1.07-.18-1.2c-.02-.12-.1-.18-.18-.19h-.01L11.46 4l-1.88 10.8 6.73 1.27L19 5.42s-3.57-2.34-3.66-2.38zM12.4 7.24l-.55 1.93s-.62-.32-1.36-.26c-1.08.07-1.1.75-1.08.93.06.96 2.58 1.17 2.72 3.42.11 1.77-1 2.98-2.6 3.08-1.92.12-2.98-.96-2.98-.96l.4-1.62s1.07.77 1.93.71c.56-.04.76-.47.74-.78-.08-1.25-2.13-1.18-2.26-3.24-.11-1.73 1.07-3.49 3.57-3.65.96-.05 1.47.2 1.47.2z" fill="#95BF47"/><path d="M14.59 3.66l-.91-.25c0-.01-.02-.79-.34-1.2C12.92 1.66 12.24 1.7 12.24 1.7l-.27 1.56-.63-.17.18 1.2.63.17.55-1.93s-.51-.24-1.47-.2c-2.5.16-3.68 1.92-3.57 3.65.13 2.06 2.18 1.99 2.26 3.24.02.31-.18.74-.74.78-.86.06-1.93-.71-1.93-.71l-.4 1.62s1.06 1.08 2.98.96c1.6-.1 2.71-1.31 2.6-3.08-.14-2.25-2.66-2.46-2.72-3.42-.02-.18 0-.86 1.08-.93.74-.06 1.36.26 1.36.26l.55-1.93c0 .01.5.21 1.39.26l1.47-2.71c.04-.06.01-.12-.04-.15z" fill="#5E8E3E"/></svg>',
+    },
+    {
+        'name': 'Toast POS Integration',
+        'desc': 'Sync Toast restaurant POS transactions, menu items, and settlements into Odoo.',
+        'price': '$1,199',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10z" fill="#FF6600"/><rect x="6" y="10" width="5" height="3" rx="0.5" fill="#FF6600"/><rect x="6" y="14" width="12" height="1.5" rx="0.5" fill="#FF6600"/></svg>',
+    },
+    {
+        'name': 'Dialpad Integration',
+        'desc': 'Click-to-call from Odoo, auto-log call activity, and surface caller info on inbound rings.',
+        'price': '$349',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="#6C47FF"/></svg>',
+    },
+    {
         'name': 'Google Maps Route Optimization',
         'desc': 'Odoo module that optimizes delivery routes using the Google Maps API. Geocodes partner addresses and calculates optimal stop sequences for stock pickings.',
         'price': '$499',
@@ -307,42 +349,6 @@ ODOO_APPS = [
         'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z" fill="#4285F4"/></svg>',
     },
     {
-        'name': 'Toast POS Integration',
-        'desc': 'Sync Toast restaurant POS transactions, menu items, and settlements into Odoo.',
-        'price': '$1,199',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10z" fill="#FF6600"/><rect x="6" y="10" width="5" height="3" rx="0.5" fill="#FF6600"/><rect x="6" y="14" width="12" height="1.5" rx="0.5" fill="#FF6600"/></svg>',
-    },
-    {
-        'name': 'Shopify Integration',
-        'desc': 'Two-way sync of products, orders, inventory, and customers between Shopify and Odoo.',
-        'price': '$1,299',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M15.34 3.04c-.07-.04-.14-.02-.18.04l-1.47 2.71-.63-.17s-.16-1.07-.18-1.2c-.02-.12-.1-.18-.18-.19h-.01L11.46 4l-1.88 10.8 6.73 1.27L19 5.42s-3.57-2.34-3.66-2.38zM12.4 7.24l-.55 1.93s-.62-.32-1.36-.26c-1.08.07-1.1.75-1.08.93.06.96 2.58 1.17 2.72 3.42.11 1.77-1 2.98-2.6 3.08-1.92.12-2.98-.96-2.98-.96l.4-1.62s1.07.77 1.93.71c.56-.04.76-.47.74-.78-.08-1.25-2.13-1.18-2.26-3.24-.11-1.73 1.07-3.49 3.57-3.65.96-.05 1.47.2 1.47.2z" fill="#95BF47"/><path d="M14.59 3.66l-.91-.25c0-.01-.02-.79-.34-1.2C12.92 1.66 12.24 1.7 12.24 1.7l-.27 1.56-.63-.17.18 1.2.63.17.55-1.93s-.51-.24-1.47-.2c-2.5.16-3.68 1.92-3.57 3.65.13 2.06 2.18 1.99 2.26 3.24.02.31-.18.74-.74.78-.86.06-1.93-.71-1.93-.71l-.4 1.62s1.06 1.08 2.98.96c1.6-.1 2.71-1.31 2.6-3.08-.14-2.25-2.66-2.46-2.72-3.42-.02-.18 0-.86 1.08-.93.74-.06 1.36.26 1.36.26l.55-1.93c0 .01.5.21 1.39.26l1.47-2.71c.04-.06.01-.12-.04-.15z" fill="#5E8E3E"/></svg>',
-    },
-    {
-        'name': 'Salesforce Integration',
-        'desc': 'Sync leads, contacts, and opportunities between Salesforce CRM and Odoo in real time.',
-        'price': '$2,999',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M10.05 5.64c.66-.7 1.58-1.14 2.6-1.14 1.3 0 2.43.7 3.06 1.73.54-.24 1.13-.37 1.75-.37 2.4 0 4.34 1.95 4.34 4.36 0 2.4-1.95 4.35-4.34 4.35-.28 0-.56-.03-.82-.08-.52 1.17-1.7 1.98-3.06 1.98-.44 0-.86-.09-1.24-.25-.56 1.34-1.87 2.28-3.41 2.28-1.55 0-2.87-.95-3.42-2.3-.2.03-.41.05-.63.05-2.13 0-3.88-1.75-3.88-3.88 0-1.53.9-2.86 2.19-3.48-.12-.4-.18-.82-.18-1.26C2.99 5.55 4.94 3.5 7.35 3.5c1.31 0 2.15.58 2.7 2.14z" fill="#00A1E0"/></svg>',
-    },
-    {
-        'name': 'HubSpot Integration',
-        'desc': 'Push Odoo contacts and deals to HubSpot, and pull marketing data back into Odoo.',
-        'price': '$1,899',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="15" cy="9.5" r="2.5" stroke="#FF7A59" stroke-width="2" fill="none"/><circle cx="9" cy="14.5" r="2" stroke="#FF7A59" stroke-width="2" fill="none"/><circle cx="18" cy="17" r="1.5" fill="#FF7A59"/><circle cx="6" cy="6" r="1.5" fill="#FF7A59"/><line x1="13" y1="11" x2="10.5" y2="13" stroke="#FF7A59" stroke-width="1.5"/><line x1="17" y1="11.5" x2="17.5" y2="15.5" stroke="#FF7A59" stroke-width="1.5"/><line x1="7.5" y1="7.5" x2="8" y2="12.5" stroke="#FF7A59" stroke-width="1.5"/></svg>',
-    },
-    {
-        'name': 'NetSuite Migration Tool',
-        'desc': 'Structured data migration from NetSuite to Odoo — customers, items, transactions, and history.',
-        'price': '$2,999',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" fill="#1B3A55"/><path d="M17 4l3 4-3 4" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 12l-3 4 3 4" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    },
-    {
-        'name': 'Dialpad Integration',
-        'desc': 'Click-to-call from Odoo, auto-log call activity, and surface caller info on inbound rings.',
-        'price': '$349',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="#6C47FF"/></svg>',
-    },
-    {
         'name': 'Auto-Assign Leads by Territory',
         'desc': 'Route incoming leads to the right salesperson based on state, zip code, or country.',
         'price': '$159',
@@ -353,12 +359,6 @@ ODOO_APPS = [
         'desc': 'Visualize how long stock has been sitting by warehouse, category, or product.',
         'price': '$179',
         'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" fill="#FBBC04"/></svg>',
-    },
-    {
-        'name': 'QuickBooks Integration',
-        'desc': 'Sync invoices, payments, chart of accounts, and journal entries between QuickBooks and Odoo.',
-        'price': '$1,899',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#2CA01C"/><path d="M9.5 8v8h1.5v-2.5h1c1.93 0 3.5-1.57 3.5-3.5v-.5C15.5 8 14.5 8 14 8H9.5zm1.5 1.5h2c.55 0 1 .45 1 1s-.45 1-1 1h-2v-2z" fill="#2CA01C"/></svg>',
     },
     {
         'name': 'Vendor Scorecard',
@@ -429,9 +429,9 @@ BOOKS = [
 ]
 
 
-@app.route('/projects')
-def projects():
-    return render_template('projects.html', web_apps=WEB_APPS, odoo_apps=ODOO_APPS)
+@app.route('/apps')
+def apps():
+    return render_template('projects.html', odoo_apps=ODOO_APPS)
 
 
 @app.route('/reading')

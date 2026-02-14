@@ -243,11 +243,6 @@ WEB_APPS = [
         'desc': 'Mortgage payoff calculator and strategy tool.',
         'url': 'https://deathtomortgage.com',
     },
-    {
-        'name': 'Ordin Consulting',
-        'desc': 'Consulting firm website for Odoo implementation services.',
-        'url': 'https://ordinconsulting.com',
-    },
 ]
 
 ODOO_APPS = [

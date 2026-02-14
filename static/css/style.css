@@ -625,6 +625,50 @@ main {
     text-decoration: underline;
 }
 
+/* ---- Reading List ---- */
+
+.reading-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-item {
+    display: flex;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.book-item:first-child {
+    border-top: 1px solid var(--border);
+}
+
+.book-number {
+    font-size: 14px;
+    color: var(--text-dim);
+    min-width: 28px;
+    padding-top: 2px;
+}
+
+.book-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+.book-author {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+}
+
+.book-note {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.7;
+}
+
 /* ---- Contact ---- */
 
 .contact-block {

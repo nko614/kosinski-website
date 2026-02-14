@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Reading List - Nicholas Kosinski{% endblock %}
+
+{% block content %}
+<main>
+    <h1 class="page-title">Reading List</h1>
+    <p class="page-subtitle">Books that shaped how I think about business, decisions, and life.</p>
+
+    <div class="reading-list">
+        {% for book in books %}
+        <div class="book-item">
+            <div class="book-number">{{ loop.index }}</div>
+            <div class="book-info">
+                <div class="book-title">{{ book.title }}</div>
+                <div class="book-author">{{ book.author }}</div>
+                <div class="book-note">{{ book.note }}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

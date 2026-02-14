@@ -182,6 +182,65 @@ def contact():
     return render_template('contact.html')
 
 
+BOOKS = [
+    {
+        'title': 'Poor Charlie\'s Almanack',
+        'author': 'Charlie Munger',
+        'note': 'The playbook for mental models, multidisciplinary thinking, and avoiding stupidity.',
+    },
+    {
+        'title': 'The Intelligent Investor',
+        'author': 'Benjamin Graham',
+        'note': 'Buffett calls it "by far the best book on investing ever written." The foundation of value investing.',
+    },
+    {
+        'title': 'The Outsiders',
+        'author': 'William Thorndike',
+        'note': 'Eight unconventional CEOs who outperformed by thinking about capital allocation differently.',
+    },
+    {
+        'title': 'Influence',
+        'author': 'Robert Cialdini',
+        'note': 'Munger handed this out to Berkshire shareholders. The psychology of why people say yes.',
+    },
+    {
+        'title': 'The Essays of Warren Buffett',
+        'author': 'Warren Buffett, edited by Lawrence Cunningham',
+        'note': 'Decades of shareholder letters distilled into lessons on business, investing, and management.',
+    },
+    {
+        'title': 'Seeking Wisdom: From Darwin to Munger',
+        'author': 'Peter Bevelin',
+        'note': 'A synthesis of Munger\'s mental models with biology, psychology, and physics.',
+    },
+    {
+        'title': 'Business Adventures',
+        'author': 'John Brooks',
+        'note': 'Buffett\'s favorite business book. Timeless stories about corporate ambition and failure.',
+    },
+    {
+        'title': 'The Most Important Thing',
+        'author': 'Howard Marks',
+        'note': 'Second-level thinking and risk management. Buffett said he read it twice immediately.',
+    },
+    {
+        'title': 'Where Are the Customers\' Yachts?',
+        'author': 'Fred Schwed Jr.',
+        'note': 'Buffett and Munger both recommend it. A funny, honest look at Wall Street\'s self-serving nature.',
+    },
+    {
+        'title': 'The Wealth of Nations',
+        'author': 'Adam Smith',
+        'note': 'The original. Munger considers it essential for understanding how economies and incentives work.',
+    },
+]
+
+
+@app.route('/reading')
+def reading():
+    return render_template('reading.html', books=BOOKS)
+
+
 @app.route('/activities')
 def activities():
     return render_template('activities.html')

@@ -254,7 +254,7 @@ ODOO_APPS = [
     {
         'name': 'Google Maps Route Optimization',
         'desc': 'Odoo module that optimizes delivery routes using the Google Maps API. Geocodes partner addresses and calculates optimal stop sequences for stock pickings.',
-        'download': True,
+        'url': 'https://github.com/nko614/odoo_customizations/tree/main/delivery_optimizer',
     },
 ]
 

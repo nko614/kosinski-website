@@ -155,7 +155,15 @@ a.nav-widget:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-.nav-widget:hover .widget-tooltip {
+.nav-widget:hover .quote-tooltip {
+    display: block;
+}
+
+.song-tooltip {
+    width: 320px;
+}
+
+.song-tooltip.active {
     display: block;
 }
 

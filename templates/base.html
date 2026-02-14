@@ -51,6 +51,7 @@
         </div>
     </nav>
 
+    <div id="page-content">
     {% block content %}{% endblock %}
 
     {% if not hide_footer %}
@@ -63,6 +64,7 @@
         </span>
     </footer>
     {% endif %}
+    </div>
 
     <script>
     (function() {
@@ -94,6 +96,79 @@
     });
     </script>
     {% block scripts %}{% endblock %}
+    <script>
+    (function() {
+        function isLocalLink(a) {
+            return a.href && a.origin === location.origin && !a.hasAttribute('target') && a.pathname !== location.pathname;
+        }
+
+        function updateActiveNav(path) {
+            document.querySelectorAll('.nav-links a').forEach(function(a) {
+                var href = a.getAttribute('href');
+                if (href === path || (href !== '/' && path.startsWith(href))) {
+                    a.classList.add('active');
+                } else {
+                    a.classList.remove('active');
+                }
+            });
+        }
+
+        function execScripts(container) {
+            container.querySelectorAll('script').forEach(function(old) {
+                var s = document.createElement('script');
+                if (old.src) { s.src = old.src; } else { s.textContent = old.textContent; }
+                old.parentNode.replaceChild(s, old);
+            });
+        }
+
+        function navigate(url, pushState) {
+            fetch(url, { headers: { 'X-Requested-With': 'SPA' } }).then(function(res) {
+                return res.text();
+            }).then(function(html) {
+                var doc = new DOMParser().parseFromString(html, 'text/html');
+                var newContent = doc.getElementById('page-content');
+                var oldContent = document.getElementById('page-content');
+                if (newContent && oldContent) {
+                    oldContent.innerHTML = newContent.innerHTML;
+                    execScripts(oldContent);
+                }
+                document.title = doc.title;
+                if (pushState) {
+                    history.pushState({}, '', url);
+                }
+                updateActiveNav(new URL(url, location.origin).pathname);
+                // close mobile menu
+                var nav = document.querySelector('.nav-links');
+                if (nav) nav.classList.remove('open');
+                // scroll to top
+                window.scrollTo(0, 0);
+                // track with GoatCounter
+                if (window.goatcounter && window.goatcounter.count) {
+                    window.goatcounter.count({ path: new URL(url, location.origin).pathname });
+                }
+            });
+        }
+
+        // intercept clicks on internal links within nav and section-links
+        document.addEventListener('click', function(e) {
+            var a = e.target.closest('a');
+            if (a && isLocalLink(a)) {
+                // only intercept nav links and section links on homepage
+                var isNav = a.closest('.nav-links') || a.closest('.site-name');
+                var isSection = a.closest('.section-links');
+                if (isNav || isSection) {
+                    e.preventDefault();
+                    navigate(a.href, true);
+                }
+            }
+        });
+
+        // handle back/forward
+        window.addEventListener('popstate', function() {
+            navigate(location.href, false);
+        });
+    })();
+    </script>
     <script data-goatcounter="https://nko.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
 </body>

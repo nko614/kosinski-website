@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% set hide_footer = true %}
+
+{% block title %}Terminal - Nicholas Kosinski{% endblock %}
+
+{% block content %}
+<div class="terminal-container">
+<div id="terminal"><div id="content"></div><span id="prompt">user > </span><span id="input-text"></span><span id="cursor"></span></div>
+    <input type="text" id="mobileInput" autocomplete="off" />
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/terminal.js') }}"></script>
+{% endblock %}

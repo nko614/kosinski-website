@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Blog - Nicholas Kosinski{% endblock %}
+
+{% block content %}
+<main>
+    <h1 class="page-title">Blog</h1>
+    <p class="page-subtitle">Occasional writing about software, business, and building things.</p>
+
+    {% if posts %}
+    <div class="post-list">
+        {% for post in posts %}
+        <a href="/blog/{{ post.slug }}" class="post-item">
+            <div class="post-date">{{ post.date }}</div>
+            <div class="post-title">{{ post.title }}</div>
+            <div class="post-summary">{{ post.summary }}</div>
+        </a>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p style="color: var(--text-dim); padding-top: 20px;">Nothing here yet. Check back soon.</p>
+    {% endif %}
+</main>
+{% endblock %}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>About Nicholas Kosinski</title>
+    <link rel="icon" href="/static/images/back.jpeg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body, html {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            font-size: 15px;
+            line-height: 1.2;
+        }
+        #terminal {
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-all;
+            margin: 0;
+            padding: 8px;
+            max-width: 100%;
+        }
+        #content {
+            margin: 0;
+            padding: 0;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+            max-width: calc(100vw - 16px);
+        }
+        #prompt {
+            margin: 0;
+            padding: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            word-break: break-word;
+        }
+        #cursor {
+            display: inline-block;
+            width: 8px;
+            height: 15px;
+            background: white;
+            margin: 0;
+            padding: 0;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+        }
+        #mobileInput {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: black;
+            color: white;
+            border: none;
+            font-family: monospace;
+            font-size: 15px;
+            padding: 8px;
+            opacity: 0;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+<div id="terminal"><div id="content"></div><span id="prompt">user > </span><span id="cursor"></span></div>
+<input type="text" id="mobileInput" autocomplete="off" />
+
+<script>
+    const terminal = document.getElementById('terminal');
+    const content = document.getElementById('content');
+    const promptSpan = document.getElementById('prompt');
+    const cursor = document.getElementById('cursor');
+    const mobileInput = document.getElementById('mobileInput');
+    const prompt = "user > ";
+    let currentInput = "";
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    function addLine(text) {
+        content.textContent += text + '\n';
+        terminal.scrollTop = terminal.scrollHeight;
+    }
+
+    // Initialize with help message
+    addLine("To learn more about Nicholas type \"help\"; this will show you a list of available commands. Keep in mind this app is best used on a desktop/computer, as it simulates a terminal so inherently not designed for mobile.");
+
+    function processCommand(command) {
+        switch (command.toLowerCase()) {
+            case "help":
+                addLine("Available commands:");
+                addLine("- name");
+                addLine("- amaze_me");
+                addLine("- occupation");
+                addLine("- favorite song");
+                addLine("- hobbies");
+                addLine("- location");
+                addLine("- resume");
+                addLine("- birth city");
+                addLine("- education");
+                addLine("- skills");
+                addLine("- languages");
+                addLine("- projects");
+                addLine("- experience");
+                addLine("- contact");
+                addLine("- social");
+                addLine("- interests");
+                addLine("- achievements");
+                addLine("- goals");
+                addLine("- certifications");
+                addLine("- tools");
+                addLine("- books");
+                addLine("- quotes");
+                addLine("- music");
+                addLine("- movies");
+                addLine("- travel");
+                addLine("- food");
+                addLine("- pets");
+                addLine("- fitness");
+                addLine("- languages_spoken");
+                addLine("- mentors");
+                addLine("- fun_fact");
+                addLine("- last_updated");
+                break;
+            case "name":
+                addLine("My full name is Nicholas Jacob Kosinski.");
+                break;
+            case "occupation":
+                addLine("I currently work at Odoo as the Managing Director of the US.");
+                break;
+            case "hobbies":
+                addLine("I enjoy running, biking, hiking, paddle tennis, techno, coding, software and computers. In my freetime I build web apps.");
+                break;
+            case "location":
+                addLine("I currently reside in North Buffalo, Buffalo, NY.");
+                break;
+            case "resume":
+                addLine("Send me an email for details about my professional story: nicholas.kosinski614@gmail.com.");
+                break;
+            case "birth city":
+                addLine("I was born on June 14, 1990, and raised in Buffalo, NY until I was 17 years old. From there I moved to Brooklyn, NY where I lived until I was 29 years old. At that point I returned to Buffalo, NY to work on growing Odoo in the US.");
+                break;
+            case "education":
+                addLine("Bachelor's in English and Economics, SUNY Albany, 2008-2012");
+                break;
+            case "skills":
+                addLine("Like most people, I am good at what I enjoy, and enjoy what I am good at: business, sales, operations, software, computers.");
+                break;
+            case "languages":
+                addLine("Most of the work I do these days is in python, HTML, or javascript. I am still just a beginner; but fascinated with this work and as a result learning new things everyday.");
+                break;
+            case "projects":
+                addLine("To see projects related to business, google 'Odoo Buffalo'; for projects related to technical stuff, check out my github: https://github.com/nko614.");
+                break;
+            case "experience":
+                addLine("I started at Odoo in October 2014; in June 2015 I left and went to NetSuite where I worked for ~1.5 years. After seeing the otherside, I returned to where I saw the real potential - Odoo.");
+                break;
+            case "contact":
+                addLine("Email is the best way to reach me: either nko@odoo.com or nicholas.kosinski614@gmail.com for all things not related to Odoo.");
+                break;
+            case "linkedin"
+                :addLine("Opening a link to a professional overview of Nick...")
+                window.open("https://www.linkedin.com/in/nicholaskosinski/", "_blank");
+                break;
+            case "interests":
+                addLine("Software and real-estate");
+                break;
+            case "achievements":
+                addLine("Let's get coffee and I can tell you what I have worked on, and where I have had both success and failure. There are many examples of each to go around. Just send an email.");
+                break;
+            case "goals":
+                addLine("In the next 5 years I will grow Odoo in Buffalo to 1,000 employees, and achieve $150M in annual revenue; as of 2025 I am almost halfway there. After that, I am not yet sure, as I prefer to focus intensely on one goal at a time.");
+                break;
+            case "favorite song":
+                addLine("Opening your favorite song in a new tab...");
+                window.open("https://www.youtube.com/watch?v=vitJD5iOIbo", "_blank");
+                break;
+            case "amaze_me"
+                :addLine("Opening a link to amaze you...")
+                window.open("https://www.youtube.com/watch?v=cTo7YeBToiY&list=RD--3eIRSg2RY&index=3", "_blank");
+                break;
+            case "certifications":
+                addLine("Odoo");
+                break;
+            case "tools":
+                addLine("VSCode, Odoo, Github, Discord, etc. etc. - long list.");
+                break;
+            case "books":
+                addLine("Wealth of Nations, Poor Charlie's Almanac; anything Charlie Munger would read is good by me.");
+                break;
+            case "quotes":
+                addLine("\"People are always blaming their circumstances for what they are. I don't believe in circumstances. The people who get on in this world are the people who get up and look for the circumstances they want, and if they can't find them, make them.\" - George B. Shaw");
+                break;
+            case "music":
+                addLine("I listen to a lot of techno, house, 90's rock - not in that order.");
+                break;
+            case "movies":
+                addLine("Garden State or Laurel Canyon");
+                break;
+            case "travel":
+                addLine("Visited: many places, most time out of the US is spent in Europe (my wife is from Austria).");
+                break;
+            case "food":
+                addLine("Generally like clean stuff; what I eat tends to correlate to how I feel, and I like to feel energized");
+                break;
+            case "pets":
+                addLine("None, but if I had to pick I would have a small army of standard poodles. They're intelligent and loyal - two great qualities.");
+                break;
+            case "fitness":
+                addLine("5k run 5 times a week, in the summer I will bike 100 miles/week whereas in the winter I will walk 5 miles/day. I will do yoga/gym on weekends, but only if I feel like it.");
+                break;
+            case "languages_spoken":
+                addLine("English; when it comes to languages I am uninterested and therefore weak.");
+                break;
+            case "mentors":
+                addLine("I have many mentors, prefer not to list names, but this is something I strongly believe in and make an effort to nourish.");
+                break;
+            case "fun_fact":
+                addLine("I cycle almost every day of my life.");
+                break;
+            case "last_updated":
+                addLine("November 4, 2024");
+                break;
+            default:
+                addLine("Unknown command. Type \"help\" for a list of commands.");
+        }
+        promptSpan.textContent = prompt;
+        currentInput = "";
+    }
+
+    function handleCommand() {
+        const command = currentInput;
+        addLine(prompt + currentInput);
+        if (command) {
+            processCommand(command);
+        }
+        currentInput = "";
+        mobileInput.value = "";
+        promptSpan.textContent = prompt;
+    }
+
+    // Handle keyboard input for desktop only
+    if (!isMobile) {
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                handleCommand();
+            } else if (e.key === 'Backspace' && currentInput.length > 0) {
+                currentInput = currentInput.slice(0, -1);
+                promptSpan.textContent = prompt + currentInput;
+                e.preventDefault();
+            } else if (e.key.length === 1) {
+                currentInput += e.key;
+                promptSpan.textContent = prompt + currentInput;
+                e.preventDefault();
+            }
+            terminal.scrollTop = terminal.scrollHeight;
+        });
+    }
+
+    // Handle mobile input
+    if (isMobile) {
+        mobileInput.addEventListener('input', function(e) {
+            currentInput = mobileInput.value;
+            promptSpan.textContent = prompt + currentInput;
+        });
+
+        mobileInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                handleCommand();
+            }
+        });
+    }
+
+    // Keep focus on terminal for both desktop and mobile
+    document.addEventListener('click', function() {
+        if (isMobile) {
+            mobileInput.focus();
+        } else {
+            cursor.focus();
+        }
+    });
+
+    // Handle mobile focus
+    terminal.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        mobileInput.focus();
+    });
+
+    // Initial focus
+    if (isMobile) {
+        mobileInput.focus();
+    } else {
+        cursor.focus();
+    }
+</script>
+</body>
+</html>

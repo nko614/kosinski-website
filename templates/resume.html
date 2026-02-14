@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Resume - Nicholas Kosinski{% endblock %}
+
+{% block content %}
+<main>
+    <h1 class="page-title">Resume</h1>
+    <p class="page-subtitle">Professional experience.</p>
+
+    <div class="resume-timeline">
+
+        <div class="resume-company">
+            <div class="company-header">
+                <div class="company-name"><img src="{{ url_for('static', filename='images/odoo-logo.png') }}" alt="Odoo" class="company-logo company-logo-dark">Odoo</div>
+                <div class="company-meta">9 yrs 7 mos &middot; New York, United States</div>
+            </div>
+
+            <div class="resume-role role-primary">
+                <div class="role-title">Managing Director, US</div>
+                <div class="role-date">Jan 2020 &ndash; Present &middot; 6 yrs 2 mos</div>
+                <ul class="role-details">
+                    <li>Selected Buffalo as the U.S. expansion hub after being tasked by the CEO to optimize cost and scalability &mdash; a choice he now publicly cites as one of Odoo's most successful strategic moves (27% OPEX reduction).</li>
+                    <li>Built the full organizational structure and scaled the subsidiary from 0 to 425+ employees across all functions (sales, consulting, engineering, HR, marketing, support, administration) while maintaining profitability from day one.</li>
+                    <li>Directed hiring, training, onboarding, performance management, and daily execution across all functions.</li>
+                    <li>Consistently delivered above-plan performance, hitting or exceeding every revenue, hiring, and operational target across a six-year scale-up with 40%+ annual growth goals and rapid headcount expansion.</li>
+                    <li>Grew Odoo's East Coast operation to $38M in annual revenue and $21.3M in ARR (Nov 2025), making it one of the company's fastest-scaling regions.</li>
+                </ul>
+                <ul class="role-details role-details-hidden" id="md-details-more">
+                    <li>Managed financial and operational performance, including budgeting, forecasting, commercial leases, payroll, procurement, taxes, government programs, and internal systems.</li>
+                    <li>Negotiated a NYS incentive agreement that granted Odoo ownership of its $22M headquarters building for $1 in exchange for creating 350 new jobs.</li>
+                    <li>Reduced OPEX through NYS incentives, including 100% sales-tax exemption on equipment and 0% state income tax for all Buffalo employees, strengthening recruiting and retention at no added cost.</li>
+                    <li>Led sales across SMB and enterprise markets, including Fortune 500 accounts, owning the full cycle from prospecting through close.</li>
+                    <li>Created the U.S. mid-market and enterprise implementation methodology and remained hands-on across scoping, analysis, development oversight, deployment, training, and long-term account management.</li>
+                    <li>Oversaw the $5M build-out and renovation of the Buffalo headquarters, including design, vendor selection, construction, and delivery.</li>
+                </ul>
+                <button class="read-more-btn" id="md-read-more" onclick="toggleDetails()">Read more</button>
+            </div>
+
+            <div class="resume-role">
+                <div class="role-title">Senior Account Executive</div>
+                <div class="role-date">Mar 2018 &ndash; Jan 2020 &middot; 1 yr 11 mos</div>
+                <div class="role-note">Top performing AE globally.</div>
+            </div>
+
+            <div class="resume-role">
+                <div class="role-title">Account Executive</div>
+                <div class="role-date">Aug 2016 &ndash; Mar 2018 &middot; 1 yr 8 mos</div>
+            </div>
+        </div>
+
+        <div class="resume-company">
+            <div class="company-header">
+                <div class="company-name"><img src="{{ url_for('static', filename='images/netsuite-logo.webp') }}" alt="Oracle NetSuite" class="company-logo company-logo-light">NetSuite</div>
+                <div class="company-meta">New York, United States</div>
+            </div>
+
+            <div class="resume-role">
+                <div class="role-title">Account Executive &mdash; Software Vertical</div>
+                <div class="role-date">Jun 2015 &ndash; Aug 2016 &middot; 1 yr 3 mos</div>
+            </div>
+        </div>
+
+        <div class="resume-company">
+            <div class="company-header">
+                <div class="company-name">MJHS</div>
+                <div class="company-meta">New York, United States</div>
+            </div>
+
+            <div class="resume-role">
+                <div class="role-title">Business Development</div>
+                <div class="role-date">Oct 2012 &ndash; Jun 2015 &middot; 2 yrs 9 mos</div>
+            </div>
+        </div>
+
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function toggleDetails() {
+    const more = document.getElementById('md-details-more');
+    const btn = document.getElementById('md-read-more');
+    if (more.classList.contains('role-details-hidden')) {
+        more.classList.remove('role-details-hidden');
+        btn.textContent = 'Show less';
+    } else {
+        more.classList.add('role-details-hidden');
+        btn.textContent = 'Read more';
+    }
+}
+</script>
+{% endblock %}

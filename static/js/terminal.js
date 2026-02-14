@@ -1,0 +1,289 @@
+const terminal = document.getElementById('terminal');
+const content = document.getElementById('content');
+const promptSpan = document.getElementById('prompt');
+const cursor = document.getElementById('cursor');
+const mobileInput = document.getElementById('mobileInput');
+const prompt = "user > ";
+const inputSpan = document.getElementById('input-text');
+let currentInput = "";
+let commandHistory = [];
+let historyIndex = -1;
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+const commands = [
+    "name", "occupation", "experience", "education", "skills", "goals",
+    "location", "birth_city", "contact", "social", "linkedin", "projects",
+    "languages", "tools", "certifications", "hobbies", "interests", "fitness",
+    "music", "movies", "books", "food", "travel", "pets", "languages_spoken",
+    "quotes", "mentors", "fun_fact", "favorite_song", "amaze_me",
+    "achievements", "resume", "clear", "last_updated", "help"
+];
+
+function addLine(text) {
+    const line = document.createElement('div');
+    line.textContent = text;
+    content.appendChild(line);
+    terminal.scrollTop = terminal.scrollHeight;
+}
+
+function addPromptLine(text) {
+    const line = document.createElement('div');
+    const promptPart = document.createElement('span');
+    promptPart.textContent = prompt;
+    promptPart.style.color = '#3a7bc8';
+    promptPart.style.fontWeight = 'bold';
+    const inputPart = document.createElement('span');
+    inputPart.textContent = text;
+    line.appendChild(promptPart);
+    line.appendChild(inputPart);
+    content.appendChild(line);
+    terminal.scrollTop = terminal.scrollHeight;
+}
+
+addLine('Type "help" for a list of commands.\n');
+
+function processCommand(command) {
+    switch (command.toLowerCase()) {
+        case "help":
+            addLine("Available commands:\n");
+            addLine("  name             Who I am");
+            addLine("  occupation       What I do");
+            addLine("  experience       Professional background");
+            addLine("  education        Where I studied");
+            addLine("  skills           What I'm good at");
+            addLine("  goals            What I'm working toward");
+            addLine("  location         Where I live");
+            addLine("  birth_city       Where I'm from");
+            addLine("  contact          How to reach me");
+            addLine("  social           LinkedIn & more");
+            addLine("  projects         Things I've built");
+            addLine("  languages        Programming languages");
+            addLine("  tools            Tech I use");
+            addLine("  certifications   Professional certs");
+            addLine("");
+            addLine("  hobbies          What I do for fun");
+            addLine("  interests        What I care about");
+            addLine("  fitness          How I stay active");
+            addLine("  music            What I listen to");
+            addLine("  movies           What I watch");
+            addLine("  books            What I read");
+            addLine("  food             What I eat");
+            addLine("  travel           Where I've been");
+            addLine("  pets             Animals");
+            addLine("  languages_spoken Human languages");
+            addLine("  quotes           Words I live by");
+            addLine("  mentors          People who shaped me");
+            addLine("  fun_fact         Something random");
+            addLine("  favorite_song    A track I love");
+            addLine("  amaze_me         Try it and see");
+            addLine("");
+            addLine("  clear            Clear the terminal");
+            addLine("  last_updated     When this was updated");
+            break;
+        case "name":
+            addLine("Nicholas Jacob Kosinski.");
+            break;
+        case "occupation":
+            addLine("Managing Director of Odoo in the US.");
+            break;
+        case "hobbies":
+            addLine("Running, biking, hiking, paddle tennis, techno, coding, building web apps.");
+            break;
+        case "location":
+            addLine("North Buffalo, Buffalo, NY.");
+            break;
+        case "resume":
+            addLine("Send me an email: nicholas.kosinski614@gmail.com");
+            break;
+        case "birth_city":
+        case "birth city":
+            addLine("Born June 14, 1990 in Buffalo, NY. Raised there until 17, then Brooklyn until 29, then back to Buffalo to grow Odoo in the US.");
+            break;
+        case "education":
+            addLine("Bachelor's in English and Economics, SUNY Albany, 2008-2012.");
+            break;
+        case "skills":
+            addLine("Building and scaling teams, enterprise sales, ERP implementation, operations, and increasingly — writing code to solve business problems.");
+            break;
+        case "languages":
+            addLine("Python, JavaScript, HTML/CSS, XML, SQL. Mostly self-taught through building real things — Odoo modules, integrations, and internal tools.");
+            break;
+        case "projects":
+            addLine("Business: google 'Odoo Buffalo'. Code: github.com/nko614");
+            window.open("https://github.com/nko614", "_blank");
+            break;
+        case "experience":
+            addLine("Started at Odoo October 2014. Left for NetSuite for ~1.5 years. Saw the other side, came back to where the real potential was.");
+            break;
+        case "contact":
+            addLine("nko@odoo.com (work) | nicholas.kosinski614@gmail.com (personal)");
+            break;
+        case "social":
+        case "linkedin":
+            addLine("Opening LinkedIn...");
+            window.open("https://www.linkedin.com/in/nicholaskosinski/", "_blank");
+            break;
+        case "interests":
+            addLine("Enterprise software, AI, real estate development, creative financing models, and the intersection of technology and business operations.");
+            break;
+        case "achievements":
+            addLine("Let's get coffee and I'll tell you about both the successes and failures. Send an email.");
+            break;
+        case "goals":
+            addLine("Grow Odoo in Buffalo to 1,000 employees and $150M in annual revenue. As of 2025, almost halfway there.");
+            break;
+        case "favorite_song":
+        case "favorite song":
+            addLine("Opening in a new tab...");
+            window.open("https://www.youtube.com/watch?v=vitJD5iOIbo", "_blank");
+            break;
+        case "amaze_me":
+            addLine("Opening something for you...");
+            window.open("https://www.youtube.com/watch?v=cTo7YeBToiY&list=RD--3eIRSg2RY&index=3", "_blank");
+            break;
+        case "certifications":
+            addLine("Odoo.");
+            break;
+        case "tools":
+            addLine("VSCode, Odoo, GitHub, Claude, Python, PostgreSQL, Linux, Discord — and whatever else the problem requires.");
+            break;
+        case "books":
+            addLine("Wealth of Nations, Poor Charlie's Almanac. Anything Munger would read.");
+            break;
+        case "quotes":
+            addLine('"People are always blaming their circumstances for what they are. I don\'t believe in circumstances. The people who get on in this world are the people who get up and look for the circumstances they want, and if they can\'t find them, make them." - George B. Shaw');
+            break;
+        case "music":
+            addLine("Techno, house, 90's rock. Not in that order.");
+            break;
+        case "movies":
+            addLine("Garden State or Laurel Canyon.");
+            break;
+        case "travel":
+            addLine("Spent a lot of time in Europe — my wife is from Austria. Favorites include Vienna, Berlin, and anywhere with good coffee and a compelling cycling atmosphere.");
+            break;
+        case "food":
+            addLine("Clean stuff. What I eat correlates to how I feel, and I like to feel energized.");
+            break;
+        case "pets":
+            addLine("None, but if I had to pick: a small army of standard poodles. Intelligent and loyal.");
+            break;
+        case "fitness":
+            addLine("5k run 5x/week. Summer: 100 miles biking/week. Winter: 5 miles walking/day. Yoga/gym on weekends if I feel like it.");
+            break;
+        case "languages_spoken":
+            addLine("English. When it comes to languages I'm uninterested and therefore weak.");
+            break;
+        case "mentors":
+            addLine("Many. Prefer not to list names, but I strongly believe in mentorship and make an effort to nourish it.");
+            break;
+        case "fun_fact":
+            addLine("I cycle almost every day of my life.");
+            break;
+        case "clear":
+            content.textContent = "";
+            break;
+        case "last_updated":
+            addLine("February 2026.");
+            break;
+        default:
+            addLine('Unknown command. Type "help" for a list of commands.');
+    }
+    inputSpan.textContent = "";
+    currentInput = "";
+}
+
+function handleCommand() {
+    const command = currentInput.trim();
+    addPromptLine(currentInput);
+    if (command) {
+        commandHistory.push(command);
+        historyIndex = commandHistory.length;
+        processCommand(command);
+    }
+    currentInput = "";
+    mobileInput.value = "";
+    inputSpan.textContent = "";
+}
+
+// Desktop keyboard input
+if (!isMobile) {
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            handleCommand();
+        } else if (e.key === 'Backspace') {
+            if (currentInput.length > 0) {
+                currentInput = currentInput.slice(0, -1);
+                inputSpan.textContent = currentInput;
+            }
+            e.preventDefault();
+        } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (commandHistory.length > 0 && historyIndex > 0) {
+                historyIndex--;
+                currentInput = commandHistory[historyIndex];
+                inputSpan.textContent = currentInput;
+            }
+        } else if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            if (historyIndex < commandHistory.length - 1) {
+                historyIndex++;
+                currentInput = commandHistory[historyIndex];
+                inputSpan.textContent = currentInput;
+            } else {
+                historyIndex = commandHistory.length;
+                currentInput = "";
+                inputSpan.textContent = "";
+            }
+        } else if (e.key === 'Tab') {
+            e.preventDefault();
+            if (currentInput.length > 0) {
+                const matches = commands.filter(c => c.startsWith(currentInput.toLowerCase()));
+                if (matches.length === 1) {
+                    currentInput = matches[0];
+                    inputSpan.textContent = currentInput;
+                } else if (matches.length > 1) {
+                    addPromptLine(currentInput);
+                    addLine(matches.join("  "));
+                    inputSpan.textContent = currentInput;
+                }
+            }
+        } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey) {
+            currentInput += e.key;
+            inputSpan.textContent = currentInput;
+            e.preventDefault();
+        }
+        terminal.scrollTop = terminal.scrollHeight;
+    });
+}
+
+// Mobile input
+if (isMobile) {
+    mobileInput.addEventListener('input', function(e) {
+        currentInput = mobileInput.value;
+        inputSpan.textContent = currentInput;
+    });
+
+    mobileInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleCommand();
+        }
+    });
+}
+
+// Focus management
+document.addEventListener('click', function() {
+    if (isMobile) {
+        mobileInput.focus();
+    }
+});
+
+terminal.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    mobileInput.focus();
+});
+
+if (isMobile) {
+    mobileInput.focus();
+}

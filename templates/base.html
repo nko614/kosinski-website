@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Nicholas Kosinski{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav>
+        <a href="/" class="site-name"><img src="{{ url_for('static', filename='images/headshot.png') }}" alt="" class="nav-photo">NK</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
+        <div class="nav-links">
+            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="/terminal" class="{% if request.path == '/terminal' %}active{% endif %}">Terminal</a>
+            <a href="/press" class="{% if request.path == '/press' %}active{% endif %}">My Work</a>
+            <a href="/resume" class="{% if request.path == '/resume' %}active{% endif %}">Resume</a>
+            <a href="/blog" class="{% if '/blog' in request.path %}active{% endif %}">Blog</a>
+            <a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a>
+        </div>
+    </nav>
+
+    {% block content %}{% endblock %}
+
+    {% if not hide_footer %}
+    <footer>
+        <span>&copy; {{ now.year }} Nicholas Kosinski</span>
+        <span>
+            <a href="https://www.linkedin.com/in/nicholaskosinski/" target="_blank">LinkedIn</a>
+            &middot;
+            <a href="https://github.com/nko614" target="_blank">GitHub</a>
+        </span>
+    </footer>
+    {% endif %}
+
+    <script>
+    (function() {
+        var toggle = document.getElementById('menuToggle');
+        var nav = document.querySelector('.nav-links');
+        if (toggle) {
+            toggle.addEventListener('click', function() {
+                nav.classList.toggle('open');
+            });
+            nav.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('open');
+                });
+            });
+        }
+    })();
+    </script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

@@ -962,8 +962,9 @@ a.project-item:hover .project-arrow {
 
 .odoo-apps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
+    justify-items: center;
 }
 
 .odoo-app-card {
@@ -1011,6 +1012,7 @@ a.project-item:hover .project-arrow {
 .odoo-logo-title {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -1565,6 +1567,10 @@ footer a:hover {
 
     .project-arrow {
         display: none;
+    }
+
+    .odoo-apps-grid {
+        grid-template-columns: 1fr;
     }
 
     .contact-email-link {

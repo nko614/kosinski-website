@@ -372,6 +372,25 @@ main {
     padding: 0;
 }
 
+.post-content > p:first-child a strong {
+    display: inline-block;
+    background: #3a7bc8;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 16px;
+    border: none;
+    transition: background 0.2s;
+}
+
+.post-content > p:first-child a {
+    border: none;
+}
+
+.post-content > p:first-child a strong:hover {
+    background: #2d62a3;
+}
+
 .post-content blockquote {
     border-left: 2px solid var(--border);
     padding-left: 20px;

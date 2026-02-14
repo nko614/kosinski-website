@@ -1354,11 +1354,12 @@ footer a:hover {
     }
 
     .widget-tooltip {
-        right: -60px;
+        right: -16px;
     }
 
     .song-tooltip {
-        width: 280px;
+        width: calc(100vw - 32px);
+        right: -16px;
     }
 
     .menu-toggle {

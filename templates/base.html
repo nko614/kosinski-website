@@ -9,6 +9,8 @@
     <meta property="og:image" content="https://nicholaskosinski.com/static/images/og-image.png">
     <meta property="og:url" content="https://nicholaskosinski.com">
     <meta property="og:type" content="website">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block head %}{% endblock %}
 </head>
@@ -21,10 +23,32 @@
             <a href="/press" class="{% if request.path == '/press' %}active{% endif %}">My Work</a>
             <a href="/resume" class="{% if request.path == '/resume' %}active{% endif %}">Resume</a>
             <a href="/terminal" class="{% if request.path == '/terminal' %}active{% endif %}">Terminal</a>
+            <a href="/projects" class="{% if request.path == '/projects' %}active{% endif %}">Projects</a>
             <a href="/activities" class="{% if request.path == '/activities' %}active{% endif %}">Activities</a>
             <a href="/blog" class="{% if '/blog' in request.path %}active{% endif %}">Blog</a>
             <a href="/reading" class="{% if request.path == '/reading' %}active{% endif %}">Reading</a>
             <a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a>
+        </div>
+        <div class="nav-widgets">
+            <div class="nav-widget" id="quoteWidget">
+                <svg class="widget-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.135 5.015C5.412 6.837 3 9.89 3 13.83c0 2.724 1.782 4.17 3.564 4.17 1.584 0 3.168-1.188 3.168-2.97 0-1.584-1.188-2.772-2.574-2.772-.396 0-.792.099-1.089.297.396-2.376 2.376-4.95 5.067-6.336L9.135 5.015zM19.135 5.015c-3.723 1.822-6.135 4.875-6.135 8.815 0 2.724 1.782 4.17 3.564 4.17 1.584 0 3.168-1.188 3.168-2.97 0-1.584-1.188-2.772-2.574-2.772-.396 0-.792.099-1.089.297.396-2.376 2.376-4.95 5.067-6.336L19.135 5.015z" fill="currentColor"/>
+                </svg>
+                <div class="widget-tooltip quote-tooltip">
+                    <div class="tooltip-text">"{{ daily_quote.text }}"</div>
+                    <div class="tooltip-author">— {{ daily_quote.author }}</div>
+                </div>
+            </div>
+            <a href="{{ daily_song.url }}" target="_blank" class="nav-widget" id="songWidget">
+                <svg class="widget-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" fill="#1DB954"/>
+                </svg>
+                <div class="widget-tooltip song-tooltip">
+                    <div class="tooltip-song">{{ daily_song.title }}</div>
+                    {% if daily_song.artist %}<div class="tooltip-artist">{{ daily_song.artist }}</div>{% endif %}
+                    <div class="tooltip-label">Song of the Day</div>
+                </div>
+            </a>
         </div>
     </nav>
 

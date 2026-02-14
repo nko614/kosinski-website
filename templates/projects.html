@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Projects - Nicholas Kosinski{% endblock %}
+
+{% block content %}
+<main>
+    <h1 class="page-title">Projects</h1>
+    <p class="page-subtitle">Things I've built.</p>
+
+    <h2 class="projects-section-title">Web Apps</h2>
+    <div class="projects-list">
+        {% for project in web_apps %}
+        <{% if project.url %}a href="{{ project.url }}" target="_blank"{% else %}div{% endif %} class="project-item">
+            <div class="project-name">{{ project.name }}</div>
+            <div class="project-desc">{{ project.desc }}</div>
+            {% if project.url %}<span class="project-arrow">&rarr;</span>{% endif %}
+        </{% if project.url %}a{% else %}div{% endif %}>
+        {% endfor %}
+    </div>
+
+    <h2 class="projects-section-title">Odoo Apps</h2>
+    <div class="projects-list">
+        {% for project in odoo_apps %}
+        <div class="project-item">
+            <div class="project-info">
+                <div class="project-name">{{ project.name }}</div>
+                <div class="project-desc">{{ project.desc }}</div>
+                {% if project.download %}
+                <a href="{{ url_for('static', filename='downloads/nko_google_maps.zip') }}" class="download-btn" download>Download Module (.zip)</a>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

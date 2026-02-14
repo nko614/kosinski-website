@@ -367,18 +367,6 @@ ODOO_APPS = [
         'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#FBBC04"/></svg>',
     },
     {
-        'name': 'Employee Onboarding Checklist',
-        'desc': 'Templated onboarding workflows with task assignments, deadlines, and completion tracking.',
-        'price': '$159',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-2 16l-4-4 1.41-1.41L12 15.17l4.59-4.58L18 12l-6 6zm.5-11V3.5L18.5 9H13c-.28 0-.5-.22-.5-.5z" fill="#4285F4"/></svg>',
-    },
-    {
-        'name': 'Automated Dunning',
-        'desc': 'Scheduled follow-up emails for overdue invoices with escalating tone and frequency.',
-        'price': '$189',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#EA4335"/></svg>',
-    },
-    {
         'name': 'Custom KPI Dashboard',
         'desc': 'Drag-and-drop dashboard with real-time KPIs across sales, inventory, and accounting.',
         'price': '$349',

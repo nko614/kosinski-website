@@ -372,23 +372,25 @@ main {
     padding: 0;
 }
 
-.post-content > p:first-child a strong {
+.post-cta {
     display: inline-block;
     background: #3a7bc8;
     color: #ffffff;
-    padding: 12px 24px;
+    padding: 14px 28px;
     border-radius: 6px;
     font-size: 16px;
+    font-weight: 600;
+    font-family: var(--font-mono);
     border: none;
+    cursor: pointer;
     transition: background 0.2s;
+    margin-bottom: 32px;
 }
 
-.post-content > p:first-child a {
-    border: none;
-}
-
-.post-content > p:first-child a strong:hover {
+.post-cta:hover {
     background: #2d62a3;
+    border: none;
+    color: #ffffff;
 }
 
 .post-content blockquote {

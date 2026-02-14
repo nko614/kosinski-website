@@ -4,7 +4,7 @@ date: 2026-02-14
 summary: Why I built an interactive guide to the mental models that shape how I think and make decisions.
 ---
 
-[**Explore the Interactive Mental Models Guide →**](http://167.71.247.51/mental_models/)
+<a href="http://167.71.247.51/mental_models/" target="_blank" class="post-cta">Explore the Interactive Mental Models Guide →</a>
 
 Charlie Munger has this idea that changed how I approach almost everything: build a latticework of mental models from multiple disciplines, and use them to make better decisions.
 

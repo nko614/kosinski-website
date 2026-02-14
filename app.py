@@ -253,6 +253,12 @@ ODOO_APPS = [
         'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#4285F4"/></svg>',
     },
     {
+        'name': 'Margin Alert',
+        'desc': 'Configurable margin threshold that warns or blocks salespeople from confirming low-margin orders. Protect your profitability automatically.',
+        'price': '$109',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="#FBBC04"/></svg>',
+    },
+    {
         'name': 'Duplicate Prevention',
         'desc': 'Configurable duplicate prevention for product SKUs and customer records. Stops duplicates before they enter your system.',
         'price': '$89',

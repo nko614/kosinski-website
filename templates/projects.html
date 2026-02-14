@@ -19,14 +19,60 @@
     </div>
 
     <h2 class="projects-section-title">Odoo Apps</h2>
-    <div class="projects-list">
-        {% for project in odoo_apps %}
-        <{% if project.url %}a href="{{ project.url }}" target="_blank"{% else %}div{% endif %} class="project-item">
-            <div class="project-name">{{ project.name }}</div>
-            <div class="project-desc">{{ project.desc }}</div>
-            {% if project.url %}<span class="project-arrow">&rarr;</span>{% endif %}
-        </{% if project.url %}a{% else %}div{% endif %}>
+    <div class="odoo-apps-grid">
+        {% for app in odoo_apps %}
+        <div class="odoo-app-card" onclick="openAppModal('{{ app.name }}', '{{ app.price }}', '{{ app.desc }}')">
+            <div class="odoo-app-icon">{{ app.icon | safe }}</div>
+            <div class="odoo-app-name">{{ app.name }}</div>
+            <div class="odoo-app-desc">{{ app.desc }}</div>
+            <div class="odoo-app-price">{{ app.price }}</div>
+        </div>
         {% endfor %}
     </div>
+
+    <div class="app-modal-overlay" id="appModal" onclick="closeAppModal(event)">
+        <div class="app-modal">
+            <button class="app-modal-close" onclick="closeAppModal(event, true)">&times;</button>
+            <div class="app-modal-icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#4285F4"/>
+                </svg>
+            </div>
+            <h3 class="app-modal-title" id="modalTitle"></h3>
+            <p class="app-modal-desc" id="modalDesc"></p>
+            <div class="app-modal-price" id="modalPrice"></div>
+            <div class="app-modal-includes">
+                <div class="app-modal-includes-title">Includes:</div>
+                <ul>
+                    <li>Full source code &amp; module files</li>
+                    <li>Installation documentation</li>
+                    <li>30 days of email support</li>
+                </ul>
+            </div>
+            <a href="https://venmo.com/nick-kosinski" target="_blank" class="app-modal-buy">Purchase via Venmo</a>
+            <p class="app-modal-note">After payment, email me at nicholas.kosinski614@gmail.com with your Venmo receipt and I'll send the module within 24 hours.</p>
+        </div>
+    </div>
 </main>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function openAppModal(name, price, desc) {
+    document.getElementById('modalTitle').textContent = name;
+    document.getElementById('modalPrice').textContent = price;
+    document.getElementById('modalDesc').textContent = desc;
+    document.getElementById('appModal').classList.add('active');
+}
+function closeAppModal(e, force) {
+    if (force || e.target === document.getElementById('appModal')) {
+        document.getElementById('appModal').classList.remove('active');
+    }
+}
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.getElementById('appModal').classList.remove('active');
+    }
+});
+</script>
 {% endblock %}

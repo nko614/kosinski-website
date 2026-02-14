@@ -1348,7 +1348,17 @@ footer a:hover {
     }
 
     .nav-widgets {
-        display: none;
+        margin-left: auto;
+        margin-right: 12px;
+        gap: 12px;
+    }
+
+    .widget-tooltip {
+        right: -60px;
+    }
+
+    .song-tooltip {
+        width: 280px;
     }
 
     .menu-toggle {

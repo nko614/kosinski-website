@@ -64,6 +64,7 @@
         </span>
     </footer>
     {% endif %}
+    {% block scripts %}{% endblock %}
     </div>
 
     <script>
@@ -95,7 +96,6 @@
         }
     });
     </script>
-    {% block scripts %}{% endblock %}
     <script>
     (function() {
         function isLocalLink(a) {

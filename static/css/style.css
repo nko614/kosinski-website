@@ -622,6 +622,145 @@ main {
 
 /* ---- Resume ---- */
 
+.resume-toggle {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 36px;
+}
+
+.resume-toggle-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.resume-toggle-btn.active {
+    background: #3a7bc8;
+    border-color: #3a7bc8;
+    color: #ffffff;
+}
+
+.resume-toggle-btn:hover:not(.active) {
+    border-color: #444;
+    color: var(--accent);
+}
+
+.resume-view.hidden {
+    display: none;
+}
+
+/* Stats Row */
+
+.resume-stats {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 48px;
+    padding: 28px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Timeline */
+
+.timeline {
+    position: relative;
+    padding-left: 32px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #3a7bc8;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 36px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -32px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    z-index: 1;
+}
+
+.timeline-item.highlight .timeline-dot {
+    border-color: #3a7bc8;
+    background: #3a7bc8;
+    box-shadow: 0 0 8px rgba(58, 123, 200, 0.4);
+}
+
+.timeline-year {
+    font-size: 13px;
+    font-weight: 600;
+    color: #3a7bc8;
+    margin-bottom: 6px;
+}
+
+.timeline-content {
+    padding: 0;
+}
+
+.timeline-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.timeline-item.highlight .timeline-title {
+    font-size: 17px;
+}
+
+.timeline-desc {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.7;
+}
+
+.timeline-item.highlight .timeline-desc {
+    color: var(--text);
+}
+
 .resume-timeline {
     display: flex;
     flex-direction: column;
@@ -1311,6 +1450,41 @@ footer a:hover {
 
     .post-content {
         font-size: 15px;
+    }
+
+    .resume-stats {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .stat-item {
+        flex: 1 1 40%;
+    }
+
+    .stat-number {
+        font-size: 20px;
+    }
+
+    .timeline {
+        padding-left: 28px;
+    }
+
+    .timeline-dot {
+        left: -28px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .timeline-title {
+        font-size: 15px;
+    }
+
+    .timeline-item.highlight .timeline-title {
+        font-size: 15px;
+    }
+
+    .timeline-desc {
+        font-size: 13px;
     }
 
     .resume-company {

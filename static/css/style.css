@@ -1358,7 +1358,15 @@ footer a:hover {
     }
 
     .song-tooltip {
-        width: 280px;
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 12px 12px 0 0;
+        padding: 20px;
+        z-index: 300;
     }
 
     .menu-toggle {

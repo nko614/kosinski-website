@@ -182,6 +182,11 @@ def contact():
     return render_template('contact.html')
 
 
+@app.route('/activities')
+def activities():
+    return render_template('activities.html')
+
+
 @app.route('/press')
 def press():
     return render_template('press.html', press_items=PRESS_ITEMS)

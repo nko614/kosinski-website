@@ -184,6 +184,11 @@ def contact():
 
 BOOKS = [
     {
+        'title': 'The Wealth of Nations',
+        'author': 'Adam Smith',
+        'note': 'The original. Essential for understanding how economies and incentives work.',
+    },
+    {
         'title': 'Poor Charlie\'s Almanack',
         'author': 'Charlie Munger',
         'note': 'The playbook for mental models, multidisciplinary thinking, and avoiding stupidity.',
@@ -191,7 +196,7 @@ BOOKS = [
     {
         'title': 'The Intelligent Investor',
         'author': 'Benjamin Graham',
-        'note': 'Buffett calls it "by far the best book on investing ever written." The foundation of value investing.',
+        'note': 'By far the best book on investing ever written. The foundation of value investing.',
     },
     {
         'title': 'The Outsiders',
@@ -201,7 +206,7 @@ BOOKS = [
     {
         'title': 'Influence',
         'author': 'Robert Cialdini',
-        'note': 'Munger handed this out to Berkshire shareholders. The psychology of why people say yes.',
+        'note': 'The psychology of why people say yes. Required reading for anyone in business.',
     },
     {
         'title': 'The Essays of Warren Buffett',
@@ -211,27 +216,22 @@ BOOKS = [
     {
         'title': 'Seeking Wisdom: From Darwin to Munger',
         'author': 'Peter Bevelin',
-        'note': 'A synthesis of Munger\'s mental models with biology, psychology, and physics.',
+        'note': 'A synthesis of mental models with biology, psychology, and physics.',
     },
     {
         'title': 'Business Adventures',
         'author': 'John Brooks',
-        'note': 'Buffett\'s favorite business book. Timeless stories about corporate ambition and failure.',
+        'note': 'Timeless stories about corporate ambition and failure. Still relevant decades later.',
     },
     {
         'title': 'The Most Important Thing',
         'author': 'Howard Marks',
-        'note': 'Second-level thinking and risk management. Buffett said he read it twice immediately.',
+        'note': 'Second-level thinking and risk management. Worth reading twice.',
     },
     {
         'title': 'Where Are the Customers\' Yachts?',
         'author': 'Fred Schwed Jr.',
-        'note': 'Buffett and Munger both recommend it. A funny, honest look at Wall Street\'s self-serving nature.',
-    },
-    {
-        'title': 'The Wealth of Nations',
-        'author': 'Adam Smith',
-        'note': 'The original. Munger considers it essential for understanding how economies and incentives work.',
+        'note': 'A funny, honest look at Wall Street\'s self-serving nature.',
     },
 ]
 

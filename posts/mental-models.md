@@ -32,6 +32,4 @@ This is what Munger means by a "latticework." The models aren't isolated facts â
 
 I wanted something I could reference quickly and share with my team. So I built it: six disciplines, 20+ models, interactive calculators, real-world examples, and a quiz to test yourself.
 
-**[Check it out here.](http://167.71.247.51/mental_models/)**
-
 Whether you're running a company, investing, or just trying to think more clearly, these models are worth the time.

@@ -252,6 +252,12 @@ ODOO_APPS = [
         'price': '$499',
         'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#4285F4"/></svg>',
     },
+    {
+        'name': 'Duplicate Prevention',
+        'desc': 'Configurable duplicate prevention for product SKUs and customer records. Stops duplicates before they enter your system.',
+        'price': '$89',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14zm-4-4h-1v-2h-2v-2h2V11h1v2h2v2h-2v2z" fill="#EA4335"/><line x1="4" y1="4" x2="20" y2="20" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round"/></svg>',
+    },
 ]
 
 

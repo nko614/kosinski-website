@@ -247,58 +247,10 @@ WEB_APPS = [
 
 ODOO_APPS = [
     {
-        'name': 'Salesforce Integration',
-        'desc': 'Sync leads, contacts, and opportunities between Salesforce CRM and Odoo in real time.',
-        'price': '$5,999',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M10.05 5.64c.66-.7 1.58-1.14 2.6-1.14 1.3 0 2.43.7 3.06 1.73.54-.24 1.13-.37 1.75-.37 2.4 0 4.34 1.95 4.34 4.36 0 2.4-1.95 4.35-4.34 4.35-.28 0-.56-.03-.82-.08-.52 1.17-1.7 1.98-3.06 1.98-.44 0-.86-.09-1.24-.25-.56 1.34-1.87 2.28-3.41 2.28-1.55 0-2.87-.95-3.42-2.3-.2.03-.41.05-.63.05-2.13 0-3.88-1.75-3.88-3.88 0-1.53.9-2.86 2.19-3.48-.12-.4-.18-.82-.18-1.26C2.99 5.55 4.94 3.5 7.35 3.5c1.31 0 2.15.58 2.7 2.14z" fill="#00A1E0"/></svg>',
-    },
-    {
-        'name': 'NetSuite Migration Tool',
-        'desc': 'Structured data migration from NetSuite to Odoo — customers, items, transactions, and history.',
-        'price': '$5,999',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" fill="#1B3A55"/><path d="M17 4l3 4-3 4" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 12l-3 4 3 4" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-    },
-    {
-        'name': 'QuickBooks Integration',
-        'desc': 'Sync invoices, payments, chart of accounts, and journal entries between QuickBooks and Odoo.',
-        'price': '$6,899',
-        'icon': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><path d="M7.5 8C6.12 8 5 9.12 5 10.5v3C5 14.88 6.12 16 7.5 16H8v-1.5h-.5c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1H9v7h1.5V8H7.5zm9 0H15v1.5h.5c.55 0 1 .45 1 1v3c0 .55-.45 1-1 1H14V7h-1.5v9h4c1.38 0 2.5-1.12 2.5-2.5v-3C19 9.12 17.88 8 16.5 8z" fill="#fff"/></svg>',
-    },
-    {
-        'name': 'HubSpot Integration',
-        'desc': 'Push Odoo contacts and deals to HubSpot, and pull marketing data back into Odoo.',
-        'price': '$5,499',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="15" cy="9.5" r="2.5" stroke="#FF7A59" stroke-width="2" fill="none"/><circle cx="9" cy="14.5" r="2" stroke="#FF7A59" stroke-width="2" fill="none"/><circle cx="18" cy="17" r="1.5" fill="#FF7A59"/><circle cx="6" cy="6" r="1.5" fill="#FF7A59"/><line x1="13" y1="11" x2="10.5" y2="13" stroke="#FF7A59" stroke-width="1.5"/><line x1="17" y1="11.5" x2="17.5" y2="15.5" stroke="#FF7A59" stroke-width="1.5"/><line x1="7.5" y1="7.5" x2="8" y2="12.5" stroke="#FF7A59" stroke-width="1.5"/></svg>',
-    },
-    {
-        'name': 'Shopify Integration',
-        'desc': 'Two-way sync of products, orders, inventory, and customers between Shopify and Odoo.',
-        'price': '$5,299',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M15.34 3.04c-.07-.04-.14-.02-.18.04l-1.47 2.71-.63-.17s-.16-1.07-.18-1.2c-.02-.12-.1-.18-.18-.19h-.01L11.46 4l-1.88 10.8 6.73 1.27L19 5.42s-3.57-2.34-3.66-2.38zM12.4 7.24l-.55 1.93s-.62-.32-1.36-.26c-1.08.07-1.1.75-1.08.93.06.96 2.58 1.17 2.72 3.42.11 1.77-1 2.98-2.6 3.08-1.92.12-2.98-.96-2.98-.96l.4-1.62s1.07.77 1.93.71c.56-.04.76-.47.74-.78-.08-1.25-2.13-1.18-2.26-3.24-.11-1.73 1.07-3.49 3.57-3.65.96-.05 1.47.2 1.47.2z" fill="#95BF47"/><path d="M14.59 3.66l-.91-.25c0-.01-.02-.79-.34-1.2C12.92 1.66 12.24 1.7 12.24 1.7l-.27 1.56-.63-.17.18 1.2.63.17.55-1.93s-.51-.24-1.47-.2c-2.5.16-3.68 1.92-3.57 3.65.13 2.06 2.18 1.99 2.26 3.24.02.31-.18.74-.74.78-.86.06-1.93-.71-1.93-.71l-.4 1.62s1.06 1.08 2.98.96c1.6-.1 2.71-1.31 2.6-3.08-.14-2.25-2.66-2.46-2.72-3.42-.02-.18 0-.86 1.08-.93.74-.06 1.36.26 1.36.26l.55-1.93c0 .01.5.21 1.39.26l1.47-2.71c.04-.06.01-.12-.04-.15z" fill="#5E8E3E"/></svg>',
-    },
-    {
-        'name': 'Toast POS Integration',
-        'desc': 'Sync Toast restaurant POS transactions, menu items, and settlements into Odoo.',
-        'price': '$5,199',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8h16v10z" fill="#FF6600"/><rect x="6" y="10" width="5" height="3" rx="0.5" fill="#FF6600"/><rect x="6" y="14" width="12" height="1.5" rx="0.5" fill="#FF6600"/></svg>',
-    },
-    {
-        'name': 'Dialpad Integration',
-        'desc': 'Click-to-call from Odoo, auto-log call activity, and surface caller info on inbound rings.',
-        'price': '$5,099',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="#6C47FF"/></svg>',
-    },
-    {
         'name': 'Google Maps Route Optimization',
         'desc': 'Odoo module that optimizes delivery routes using the Google Maps API. Geocodes partner addresses and calculates optimal stop sequences for stock pickings.',
         'price': '$499',
         'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="#4285F4"/></svg>',
-    },
-    {
-        'name': 'Margin Alert',
-        'desc': 'Configurable margin threshold that warns or blocks salespeople from confirming low-margin orders. Protect your profitability automatically.',
-        'price': '$109',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="#FBBC04"/></svg>',
     },
     {
         'name': 'Duplicate Prevention',
@@ -307,70 +259,16 @@ ODOO_APPS = [
         'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14zm-4-4h-1v-2h-2v-2h2V11h1v2h2v2h-2v2z" fill="#EA4335"/><line x1="4" y1="4" x2="20" y2="20" stroke="#EA4335" stroke-width="2.5" stroke-linecap="round"/></svg>',
     },
     {
-        'name': 'Maintenance Auto-Reminders',
-        'desc': 'Automated email and in-app reminders for overdue or upcoming maintenance requests.',
-        'price': '$149',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" fill="#34A853"/></svg>',
+        'name': 'Margin Alert',
+        'desc': 'Configurable margin threshold that warns or blocks salespeople from confirming low-margin orders. Protect your profitability automatically.',
+        'price': '$109',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z" fill="#FBBC04"/></svg>',
     },
     {
-        'name': 'Make to Order (Sales)',
-        'desc': 'Trigger manufacturing or purchase orders automatically when a sales order is confirmed.',
-        'price': '$199',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" fill="#4285F4"/></svg>',
-    },
-    {
-        'name': 'Bitcoin Currency',
-        'desc': 'Adds BTC as a currency with live exchange rate sync for invoicing and payments.',
-        'price': '$129',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M11.5 11.5v-3h1.25c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5H11.5zm0 1h1.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5H11.5v-3z" fill="#F7931A"/><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.33 12.5c0 1.1-.6 2.05-1.48 2.56.02.01.15.44.15.44h-1.5l-.1-.5H11.5v.5H10v-.5H8.5v-1.5H10V8.5H8.5V7H10v-.5h1.5V7h.9l.1-.5h1.5l-.15.44c.88.51 1.48 1.46 1.48 2.56 0 .78-.3 1.48-.78 2 .48.52.78 1.22.78 2z" fill="#F7931A"/></svg>',
-    },
-    {
-        'name': 'Task Cascade Scheduling',
-        'desc': 'Automatically shift dependent project tasks when a parent task\'s dates change.',
-        'price': '$179',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 9h-2v5.5l3.5 2.1-.75 1.23L10 17.5V11H8l4-4 4 4h-3z" fill="#7B61FF"/></svg>',
-    },
-    {
-        'name': 'Early Payment Discount',
-        'desc': 'Offer customers automatic discounts for paying invoices before the due date.',
-        'price': '$139',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.94s4.18 1.36 4.18 3.87c0 1.87-1.38 2.92-3.12 3.17z" fill="#34A853"/></svg>',
-    },
-    {
-        'name': 'Bi-Directional Margin Calculator',
-        'desc': 'Set a target dollar margin or percentage and auto-compute the other, right on the product form.',
-        'price': '$99',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.5 14H13v-1.5h1.5V17zm0-3H13v-6h1.5v6zM10 17H8.5v-1.5H10V17zm0-3H8.5v-6H10v6z" fill="#EA4335"/><path d="M7 7l10 10M17 7L7 17" stroke="#EA4335" stroke-width="1.5" stroke-linecap="round"/></svg>',
-    },
-    {
-        'name': 'Website Returns Processing',
-        'desc': 'Let customers initiate product returns directly from the Odoo eCommerce portal.',
-        'price': '$249',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z" fill="#4285F4"/></svg>',
-    },
-    {
-        'name': 'Auto-Assign Leads by Territory',
-        'desc': 'Route incoming leads to the right salesperson based on state, zip code, or country.',
-        'price': '$159',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#34A853"/></svg>',
-    },
-    {
-        'name': 'Inventory Aging Report',
-        'desc': 'Visualize how long stock has been sitting by warehouse, category, or product.',
-        'price': '$179',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" fill="#FBBC04"/></svg>',
-    },
-    {
-        'name': 'Vendor Scorecard',
-        'desc': 'Rate and rank vendors on delivery time, quality, and pricing to inform purchasing decisions.',
-        'price': '$169',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#FBBC04"/></svg>',
-    },
-    {
-        'name': 'Custom KPI Dashboard',
-        'desc': 'Drag-and-drop dashboard with real-time KPIs across sales, inventory, and accounting.',
-        'price': '$349',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="#7B61FF"/></svg>',
+        'name': 'Custom Reporting',
+        'desc': 'Tailored Odoo reports and dashboards built to your specs. Hourly consulting — contact for more info.',
+        'price': 'Contact',
+        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" fill="#7B61FF"/></svg>',
     },
 ]
 

@@ -38,72 +38,83 @@
             <div class="timeline-line"></div>
 
             <div class="timeline-item highlight">
-                <div class="timeline-dot has-photo">
-                    <div class="timeline-photo-expand timeline-photo-gallery">
-                        <img src="{{ url_for('static', filename='images/odoo-2025-1.png') }}" alt="Odoo Buffalo 2025">
-                        <img src="{{ url_for('static', filename='images/odoo-2025-2.png') }}" alt="Odoo Buffalo 2025">
-                    </div>
-                </div>
+                <div class="timeline-dot has-photo" onclick="toggleSlideshow(this)"></div>
                 <div class="timeline-year">2025</div>
                 <div class="timeline-content">
                     <div class="timeline-title">425+ employees, $38M revenue, $21.3M ARR</div>
                     <div class="timeline-desc">Odoo's East Coast operation becomes one of the company's fastest-scaling regions.</div>
                 </div>
+                <div class="timeline-slideshow">
+                    <div class="slideshow-track">
+                        <img src="{{ url_for('static', filename='images/odoo-2025-1.png') }}" alt="Odoo Buffalo 2025">
+                        <img src="{{ url_for('static', filename='images/odoo-2025-2.png') }}" alt="Odoo Buffalo 2025">
+                    </div>
+                    <button class="slide-arrow slide-prev" onclick="slideNav(this, -1)">&lsaquo;</button>
+                    <button class="slide-arrow slide-next" onclick="slideNav(this, 1)">&rsaquo;</button>
+                    <div class="slide-dots"></div>
+                </div>
             </div>
 
             <div class="timeline-item highlight">
-                <div class="timeline-dot has-photo">
-                    <div class="timeline-photo-expand timeline-photo-gallery">
+                <div class="timeline-dot has-photo" onclick="toggleSlideshow(this)"></div>
+                <div class="timeline-year">2024</div>
+                <div class="timeline-content">
+                    <div class="timeline-title">Oversaw $5M headquarters build-out</div>
+                    <div class="timeline-desc">Managed design, vendor selection, construction, and delivery of the Buffalo office and full commercial kitchen renovation.</div>
+                </div>
+                <div class="timeline-slideshow">
+                    <div class="slideshow-track">
                         <img src="{{ url_for('static', filename='images/odoo-buildout-2024-1.png') }}" alt="Odoo HQ build-out 2024">
                         <img src="{{ url_for('static', filename='images/odoo-buildout-2024-2.png') }}" alt="Odoo HQ build-out 2024">
                         <img src="{{ url_for('static', filename='images/odoo-buildout-2024-3.png') }}" alt="Odoo HQ build-out 2024">
                         <img src="{{ url_for('static', filename='images/odoo-buildout-2024-4.png') }}" alt="Odoo HQ build-out 2024">
                         <img src="{{ url_for('static', filename='images/odoo-buildout-2024-5.png') }}" alt="Odoo HQ build-out 2024">
                     </div>
-                </div>
-                <div class="timeline-year">2024</div>
-                <div class="timeline-content">
-                    <div class="timeline-title">Oversaw $5M headquarters build-out</div>
-                    <div class="timeline-desc">Managed design, vendor selection, construction, and delivery of the Buffalo office and full commercial kitchen renovation.</div>
+                    <button class="slide-arrow slide-prev" onclick="slideNav(this, -1)">&lsaquo;</button>
+                    <button class="slide-arrow slide-next" onclick="slideNav(this, 1)">&rsaquo;</button>
+                    <div class="slide-dots"></div>
                 </div>
             </div>
 
             <div class="timeline-item highlight">
-                <div class="timeline-dot has-photo">
-                    <div class="timeline-photo-expand">
-                        <img src="{{ url_for('static', filename='images/odoo-hq-2023.png') }}" alt="40 Fountain Plaza, Odoo HQ">
-                    </div>
-                </div>
+                <div class="timeline-dot has-photo" onclick="toggleSlideshow(this)"></div>
                 <div class="timeline-year">2023</div>
                 <div class="timeline-content">
                     <div class="timeline-title">Negotiated $22M HQ building for $1</div>
                     <div class="timeline-desc">Secured NYS incentive deal: ownership of 40 Fountain Plaza in exchange for creating 350 jobs.</div>
                 </div>
+                <div class="timeline-slideshow">
+                    <div class="slideshow-track">
+                        <img src="{{ url_for('static', filename='images/odoo-hq-2023.png') }}" alt="40 Fountain Plaza, Odoo HQ">
+                    </div>
+                </div>
             </div>
 
             <div class="timeline-item highlight">
-                <div class="timeline-dot has-photo">
-                    <div class="timeline-photo-expand">
-                        <img src="{{ url_for('static', filename='images/odoo-office-2021.png') }}" alt="Odoo Buffalo team meeting, 2021">
-                    </div>
-                </div>
+                <div class="timeline-dot has-photo" onclick="toggleSlideshow(this)"></div>
                 <div class="timeline-year">2021</div>
                 <div class="timeline-content">
                     <div class="timeline-title">Negotiated tax-free incentives from NYS</div>
                     <div class="timeline-desc">100% sales-tax exemption on equipment and 0% state income tax for all Buffalo employees, strengthening recruiting and retention at no added cost.</div>
                 </div>
+                <div class="timeline-slideshow">
+                    <div class="slideshow-track">
+                        <img src="{{ url_for('static', filename='images/odoo-office-2021.png') }}" alt="Odoo Buffalo team meeting, 2021">
+                    </div>
+                </div>
             </div>
 
             <div class="timeline-item highlight">
-                <div class="timeline-dot has-photo">
-                    <div class="timeline-photo-expand">
-                        <img src="{{ url_for('static', filename='images/odoo-office-2020.png') }}" alt="Odoo Buffalo office, 2020">
-                    </div>
-                </div>
+                <div class="timeline-dot has-photo" onclick="toggleSlideshow(this)"></div>
                 <div class="timeline-year">2020</div>
                 <div class="timeline-content">
                     <div class="timeline-title">Tapped to build U.S. operations from scratch</div>
                     <div class="timeline-desc">Selected Buffalo as the expansion hub after being tasked by the CEO to optimize cost and scalability &mdash; a choice he now publicly cites as one of Odoo's most successful strategic moves (27% OPEX reduction). Profitable from day one.</div>
+                </div>
+                <div class="timeline-slideshow">
+                    <div class="slideshow-track">
+                        <img src="{{ url_for('static', filename='images/odoo-office-2020.png') }}" alt="Odoo Buffalo office, 2020">
+                    </div>
                 </div>
             </div>
 
@@ -231,6 +242,68 @@ function showView(view) {
     document.getElementById('btnTimeline').classList.toggle('active', view === 'timeline');
     document.getElementById('btnRaw').classList.toggle('active', view === 'raw');
 }
+
+// Slideshow logic
+function toggleSlideshow(dot) {
+    var item = dot.closest('.timeline-item');
+    var show = item.querySelector('.timeline-slideshow');
+    var isOpen = show.classList.contains('open');
+    // close all others
+    document.querySelectorAll('.timeline-slideshow.open').forEach(function(s) {
+        s.classList.remove('open');
+    });
+    if (!isOpen) {
+        show.classList.add('open');
+        // init dots if needed
+        var track = show.querySelector('.slideshow-track');
+        var imgs = track.querySelectorAll('img');
+        var dotsEl = show.querySelector('.slide-dots');
+        if (dotsEl && dotsEl.children.length === 0 && imgs.length > 1) {
+            imgs.forEach(function(_, i) {
+                var d = document.createElement('span');
+                d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+                d.onclick = function() { goToSlide(show, i); };
+                dotsEl.appendChild(d);
+            });
+        }
+        // hide arrows for single image
+        if (imgs.length <= 1) {
+            show.querySelectorAll('.slide-arrow').forEach(function(a) { a.style.display = 'none'; });
+        }
+    }
+}
+
+function goToSlide(show, idx) {
+    var track = show.querySelector('.slideshow-track');
+    var imgs = track.querySelectorAll('img');
+    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    show.querySelectorAll('.slide-dot').forEach(function(d, i) {
+        d.classList.toggle('active', i === idx);
+    });
+}
+
+function slideNav(btn, dir) {
+    var show = btn.closest('.timeline-slideshow');
+    var track = show.querySelector('.slideshow-track');
+    var imgs = track.querySelectorAll('img');
+    var dots = show.querySelectorAll('.slide-dot');
+    var current = 0;
+    dots.forEach(function(d, i) { if (d.classList.contains('active')) current = i; });
+    var next = (current + dir + imgs.length) % imgs.length;
+    goToSlide(show, next);
+}
+
+// Auto-advance slideshows
+setInterval(function() {
+    document.querySelectorAll('.timeline-slideshow.open').forEach(function(show) {
+        var imgs = show.querySelectorAll('.slideshow-track img');
+        if (imgs.length <= 1) return;
+        var dots = show.querySelectorAll('.slide-dot');
+        var current = 0;
+        dots.forEach(function(d, i) { if (d.classList.contains('active')) current = i; });
+        goToSlide(show, (current + 1) % imgs.length);
+    });
+}, 4000);
 
 function toggleDetails() {
     const more = document.getElementById('md-details-more');

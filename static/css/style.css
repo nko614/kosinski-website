@@ -796,63 +796,83 @@ main {
     }
 }
 
-.timeline-photo-expand {
+/* Inline Slideshow */
+.timeline-slideshow {
     display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -60px;
-    z-index: 50;
-    background: #1a1a1a;
-    border: 1px solid var(--border);
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 12px 0 8px 0;
     border-radius: 8px;
-    padding: 6px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    background: #111;
+    border: 1px solid var(--border);
 }
 
-.timeline-dot.has-photo:hover .timeline-photo-expand {
+.timeline-slideshow.open {
     display: block;
 }
 
-.timeline-photo-expand img {
-    display: block;
-    width: 420px;
-    height: auto;
-    border-radius: 4px;
-}
-
-.timeline-photo-gallery {
-    display: none;
-    gap: 6px;
-    flex-wrap: wrap;
-    max-width: 580px;
-}
-
-.timeline-dot.has-photo:hover .timeline-photo-gallery {
+.slideshow-track {
     display: flex;
+    transition: transform 0.4s ease;
 }
 
-.timeline-photo-gallery img {
-    width: 280px;
+.slideshow-track img {
+    min-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    line-height: 1;
+    transition: background 0.2s;
+}
+
+.slide-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.slide-prev { left: 8px; }
+.slide-next { right: 8px; }
+
+.slide-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 0;
+    background: #111;
+}
+
+.slide-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #444;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.slide-dot.active {
+    background: #3a7bc8;
 }
 
 @media (max-width: 600px) {
-    .timeline-photo-expand {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 24px;
-    }
-
-    .timeline-photo-expand img {
-        width: 280px;
-    }
-
-    .timeline-photo-gallery {
-        flex-direction: column;
-    }
-
-    .timeline-photo-gallery img {
-        width: 250px;
+    .timeline-slideshow {
+        max-width: 100%;
     }
 }
 

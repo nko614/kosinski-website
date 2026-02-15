@@ -154,17 +154,27 @@
             });
         }
 
-        // intercept clicks on internal links within nav and section-links
+        // intercept clicks on nav links and section links
+        function attachSpaLinks(container) {
+            container.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function(e) {
+                    if (isLocalLink(a)) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        navigate(a.href, true);
+                        return false;
+                    }
+                });
+            });
+        }
+        attachSpaLinks(document.querySelector('.nav-links'));
+        attachSpaLinks(document.querySelector('.site-name').parentNode);
+        // also handle section-links on homepage (delegated since they're in page-content)
         document.addEventListener('click', function(e) {
-            var a = e.target.closest('a');
+            var a = e.target.closest('.section-links a');
             if (a && isLocalLink(a)) {
-                // only intercept nav links and section links on homepage
-                var isNav = a.closest('.nav-links') || a.closest('.site-name');
-                var isSection = a.closest('.section-links');
-                if (isNav || isSection) {
-                    e.preventDefault();
-                    navigate(a.href, true);
-                }
+                e.preventDefault();
+                navigate(a.href, true);
             }
         });
 

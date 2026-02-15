@@ -262,7 +262,7 @@ ODOO_APPS = [
         'name': 'QuickBooks Integration',
         'desc': 'Sync invoices, payments, chart of accounts, and journal entries between QuickBooks and Odoo.',
         'price': '$6,899',
-        'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#2CA01C"/><path d="M9.5 8v8h1.5v-2.5h1c1.93 0 3.5-1.57 3.5-3.5v-.5C15.5 8 14.5 8 14 8H9.5zm1.5 1.5h2c.55 0 1 .45 1 1s-.45 1-1 1h-2v-2z" fill="#2CA01C"/></svg>',
+        'icon': '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><circle cx="12" cy="12" r="11" fill="#2CA01C"/><path d="M7.5 8C6.12 8 5 9.12 5 10.5v3C5 14.88 6.12 16 7.5 16H8v-1.5h-.5c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1H9v7h1.5V8H7.5zm9 0H15v1.5h.5c.55 0 1 .45 1 1v3c0 .55-.45 1-1 1H14V7h-1.5v9h4c1.38 0 2.5-1.12 2.5-2.5v-3C19 9.12 17.88 8 16.5 8z" fill="#fff"/></svg>',
     },
     {
         'name': 'HubSpot Integration',

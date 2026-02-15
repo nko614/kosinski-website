@@ -763,6 +763,58 @@ main {
     color: var(--text);
 }
 
+/* Timeline Photo */
+
+.timeline-photo-wrap {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.timeline-photo-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-dim);
+    font-size: 12px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.timeline-photo-trigger:hover {
+    color: var(--accent);
+}
+
+.timeline-photo-expand {
+    display: none;
+    position: absolute;
+    bottom: 28px;
+    left: 0;
+    z-index: 50;
+    background: #1a1a1a;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+}
+
+.timeline-photo-wrap:hover .timeline-photo-expand {
+    display: block;
+}
+
+.timeline-photo-expand img {
+    display: block;
+    width: 420px;
+    height: auto;
+    border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    .timeline-photo-expand img {
+        width: 280px;
+    }
+}
+
 .resume-timeline {
     display: flex;
     flex-direction: column;

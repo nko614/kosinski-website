@@ -16,18 +16,18 @@
 </head>
 <body>
     <nav>
-        <a href="/" class="site-name"><img src="{{ url_for('static', filename='images/headshot.png') }}" alt="" class="nav-photo">NK</a>
+        <a href="/" class="site-name" onclick="return spaNav(this)"><img src="{{ url_for('static', filename='images/headshot.png') }}" alt="" class="nav-photo">NK</a>
         <button class="menu-toggle" id="menuToggle" aria-label="Menu">&#9776;</button>
         <div class="nav-links">
-            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
-            <a href="/press" class="{% if request.path == '/press' %}active{% endif %}">My Work</a>
-            <a href="/resume" class="{% if request.path == '/resume' %}active{% endif %}">Resume</a>
-            <a href="/apps" class="{% if request.path == '/apps' %}active{% endif %}">Apps</a>
-            <a href="/activities" class="{% if request.path == '/activities' %}active{% endif %}">Activities</a>
-            <a href="/blog" class="{% if '/blog' in request.path %}active{% endif %}">Blog</a>
-            <a href="/reading" class="{% if request.path == '/reading' %}active{% endif %}">Reading</a>
-            <a href="/terminal" class="{% if request.path == '/terminal' %}active{% endif %}">Terminal</a>
-            <a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}">Contact</a>
+            <a href="/" class="{% if request.path == '/' %}active{% endif %}" onclick="return spaNav(this)">Home</a>
+            <a href="/press" class="{% if request.path == '/press' %}active{% endif %}" onclick="return spaNav(this)">My Work</a>
+            <a href="/resume" class="{% if request.path == '/resume' %}active{% endif %}" onclick="return spaNav(this)">Resume</a>
+            <a href="/apps" class="{% if request.path == '/apps' %}active{% endif %}" onclick="return spaNav(this)">Apps</a>
+            <a href="/activities" class="{% if request.path == '/activities' %}active{% endif %}" onclick="return spaNav(this)">Activities</a>
+            <a href="/blog" class="{% if '/blog' in request.path %}active{% endif %}" onclick="return spaNav(this)">Blog</a>
+            <a href="/reading" class="{% if request.path == '/reading' %}active{% endif %}" onclick="return spaNav(this)">Reading</a>
+            <a href="/terminal" class="{% if request.path == '/terminal' %}active{% endif %}" onclick="return spaNav(this)">Terminal</a>
+            <a href="/contact" class="{% if request.path == '/contact' %}active{% endif %}" onclick="return spaNav(this)">Contact</a>
         </div>
         <div class="nav-widgets">
             <div class="nav-widget" id="quoteWidget">
@@ -154,22 +154,14 @@
             });
         }
 
-        // intercept clicks on nav links and section links
-        function attachSpaLinks(container) {
-            container.querySelectorAll('a').forEach(function(a) {
-                a.addEventListener('click', function(e) {
-                    if (isLocalLink(a)) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        navigate(a.href, true);
-                        return false;
-                    }
-                });
-            });
-        }
-        attachSpaLinks(document.querySelector('.nav-links'));
-        attachSpaLinks(document.querySelector('.site-name').parentNode);
-        // also handle section-links on homepage (delegated since they're in page-content)
+        // SPA navigation for nav links (called via inline onclick="return spaNav(this)")
+        window.spaNav = function(a) {
+            if (a.pathname === currentPath) return false;
+            navigate(a.href, true);
+            return false; // prevents browser from following the link
+        };
+
+        // handle section-links on homepage (delegated since they're in page-content)
         document.addEventListener('click', function(e) {
             var a = e.target.closest('.section-links a');
             if (a && isLocalLink(a)) {

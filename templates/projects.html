@@ -5,9 +5,8 @@
 {% block content %}
 <main>
     <h1 class="page-title">Apps</h1>
-    <p class="page-subtitle">Custom apps that I've built.</p>
 
-    <h2 class="projects-section-title odoo-logo-title"><img src="{{ url_for('static', filename='images/odoo-logo.png') }}" alt="Odoo" class="odoo-title-logo"></h2>
+    <h2 class="apps-section-header"><img src="{{ url_for('static', filename='images/odoo-logo.png') }}" alt="Odoo" class="apps-section-logo">Odoo Modules</h2>
     <div class="odoo-apps-grid">
         {% for app in odoo_apps %}
         <div class="odoo-app-card" onclick="openAppModal('{{ app.name }}', '{{ app.desc }}')">
@@ -22,7 +21,7 @@
         <p>Don't see what you need? <a href="mailto:nkosinski@ordinconsulting.com">Email nkosinski@ordinconsulting.com</a> to request a custom app.</p>
     </div>
 
-    <h2 class="projects-section-title">Web Apps</h2>
+    <h2 class="apps-section-header">Web Apps</h2>
     <div class="odoo-apps-grid">
         {% for app in web_apps %}
         <a href="{{ app.url }}" target="_blank" class="odoo-app-card" style="text-decoration:none;color:inherit;">

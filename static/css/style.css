@@ -1082,9 +1082,8 @@ a.project-item:hover .project-arrow {
 
 .odoo-apps-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
-    justify-items: center;
 }
 
 .odoo-app-card {
@@ -1129,15 +1128,22 @@ a.project-item:hover .project-arrow {
     margin-top: auto;
 }
 
-.odoo-logo-title {
+.apps-section-header {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 40px 0 16px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    gap: 8px;
 }
 
-.odoo-title-logo {
-    height: 48px;
+.apps-section-header:first-of-type {
+    margin-top: 10px;
+}
+
+.apps-section-logo {
+    height: 22px;
     width: auto;
     object-fit: contain;
 }

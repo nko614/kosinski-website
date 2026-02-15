@@ -121,11 +121,12 @@
             });
         }
 
-        var navigating = false;
+        var currentPath = location.pathname;
         function navigate(url, pushState) {
-            // Prevent concurrent navigations (double-fire protection)
-            if (navigating) return;
-            navigating = true;
+            var targetPath = new URL(url, location.origin).pathname;
+            // Skip if already showing this page (prevents spurious re-renders)
+            if (targetPath === currentPath && !pushState) return;
+            currentPath = targetPath;
             fetch(url, { headers: { 'X-Requested-With': 'SPA' } }).then(function(res) {
                 return res.text();
             }).then(function(html) {
@@ -140,7 +141,7 @@
                 if (pushState) {
                     history.pushState({}, '', url);
                 }
-                updateActiveNav(new URL(url, location.origin).pathname);
+                updateActiveNav(targetPath);
                 // close mobile menu
                 var nav = document.querySelector('.nav-links');
                 if (nav) nav.classList.remove('open');
@@ -148,11 +149,8 @@
                 window.scrollTo(0, 0);
                 // track with GoatCounter
                 if (window.goatcounter && window.goatcounter.count) {
-                    window.goatcounter.count({ path: new URL(url, location.origin).pathname });
+                    window.goatcounter.count({ path: targetPath });
                 }
-                navigating = false;
-            }).catch(function() {
-                navigating = false;
             });
         }
 
@@ -165,8 +163,6 @@
                 var isSection = a.closest('.section-links');
                 if (isNav || isSection) {
                     e.preventDefault();
-                    // Skip if already on this page
-                    if (a.pathname === location.pathname) return;
                     navigate(a.href, true);
                 }
             }

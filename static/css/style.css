@@ -846,6 +846,10 @@ main {
     background: rgba(0, 0, 0, 0.8);
 }
 
+.slideshow-wide {
+    max-width: 520px;
+}
+
 .slide-prev { left: 8px; }
 .slide-next { right: 8px; }
 

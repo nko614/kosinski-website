@@ -799,7 +799,8 @@ main {
 .timeline-photo-expand {
     display: none;
     position: absolute;
-    left: 24px;
+    left: 50%;
+    transform: translateX(-50%);
     top: -60px;
     z-index: 50;
     background: #1a1a1a;
@@ -823,6 +824,8 @@ main {
 .timeline-photo-gallery {
     display: none;
     gap: 6px;
+    flex-wrap: wrap;
+    max-width: 580px;
 }
 
 .timeline-dot.has-photo:hover .timeline-photo-gallery {
@@ -835,7 +838,8 @@ main {
 
 @media (max-width: 600px) {
     .timeline-photo-expand {
-        left: -16px;
+        left: 50%;
+        transform: translateX(-50%);
         top: 24px;
     }
 

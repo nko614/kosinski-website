@@ -820,6 +820,19 @@ main {
     border-radius: 4px;
 }
 
+.timeline-photo-gallery {
+    display: none;
+    gap: 6px;
+}
+
+.timeline-dot.has-photo:hover .timeline-photo-gallery {
+    display: flex;
+}
+
+.timeline-photo-gallery img {
+    width: 200px;
+}
+
 @media (max-width: 600px) {
     .timeline-photo-expand {
         left: -16px;
@@ -828,6 +841,14 @@ main {
 
     .timeline-photo-expand img {
         width: 280px;
+    }
+
+    .timeline-photo-gallery {
+        flex-direction: column;
+    }
+
+    .timeline-photo-gallery img {
+        width: 250px;
     }
 }
 

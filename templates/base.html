@@ -121,7 +121,11 @@
             });
         }
 
+        var navigating = false;
         function navigate(url, pushState) {
+            // Prevent concurrent navigations (double-fire protection)
+            if (navigating) return;
+            navigating = true;
             fetch(url, { headers: { 'X-Requested-With': 'SPA' } }).then(function(res) {
                 return res.text();
             }).then(function(html) {
@@ -146,6 +150,9 @@
                 if (window.goatcounter && window.goatcounter.count) {
                     window.goatcounter.count({ path: new URL(url, location.origin).pathname });
                 }
+                navigating = false;
+            }).catch(function() {
+                navigating = false;
             });
         }
 
@@ -158,6 +165,8 @@
                 var isSection = a.closest('.section-links');
                 if (isNav || isSection) {
                     e.preventDefault();
+                    // Skip if already on this page
+                    if (a.pathname === location.pathname) return;
                     navigate(a.href, true);
                 }
             }

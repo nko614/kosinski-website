@@ -261,7 +261,7 @@ ODOO_APPS = [
     {
         'name': 'QuickBooks Integration',
         'desc': 'Sync invoices, payments, chart of accounts, and journal entries between QuickBooks and Odoo.',
-        'price': '$1,899',
+        'price': '$6,899',
         'icon': '<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="#2CA01C"/><path d="M9.5 8v8h1.5v-2.5h1c1.93 0 3.5-1.57 3.5-3.5v-.5C15.5 8 14.5 8 14 8H9.5zm1.5 1.5h2c.55 0 1 .45 1 1s-.45 1-1 1h-2v-2z" fill="#2CA01C"/></svg>',
     },
     {

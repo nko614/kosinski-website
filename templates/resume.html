@@ -29,6 +29,10 @@
                 <div class="stat-label">HQ Purchase Price</div>
             </div>
             <div class="stat-item">
+                <div class="stat-number">$21.3M</div>
+                <div class="stat-label">ARR</div>
+            </div>
+            <div class="stat-item">
                 <div class="stat-number">6+</div>
                 <div class="stat-label">Years Leading</div>
             </div>
@@ -293,17 +297,6 @@ function slideNav(btn, dir) {
     goToSlide(show, next);
 }
 
-// Auto-advance slideshows
-setInterval(function() {
-    document.querySelectorAll('.timeline-slideshow.open').forEach(function(show) {
-        var imgs = show.querySelectorAll('.slideshow-track img');
-        if (imgs.length <= 1) return;
-        var dots = show.querySelectorAll('.slide-dot');
-        var current = 0;
-        dots.forEach(function(d, i) { if (d.classList.contains('active')) current = i; });
-        goToSlide(show, (current + 1) % imgs.length);
-    });
-}, 4000);
 
 function toggleDetails() {
     const more = document.getElementById('md-details-more');

@@ -763,33 +763,17 @@ main {
     color: var(--text);
 }
 
-/* Timeline Photo */
+/* Timeline Photo on Dot */
 
-.timeline-photo-wrap {
-    position: relative;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.timeline-photo-trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--text-dim);
-    font-size: 12px;
+.timeline-dot.has-photo {
     cursor: pointer;
-    transition: color 0.2s;
-}
-
-.timeline-photo-trigger:hover {
-    color: var(--accent);
 }
 
 .timeline-photo-expand {
     display: none;
     position: absolute;
-    bottom: 28px;
-    left: 0;
+    left: 24px;
+    top: -60px;
     z-index: 50;
     background: #1a1a1a;
     border: 1px solid var(--border);
@@ -798,7 +782,7 @@ main {
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
 }
 
-.timeline-photo-wrap:hover .timeline-photo-expand {
+.timeline-dot.has-photo:hover .timeline-photo-expand {
     display: block;
 }
 
@@ -810,6 +794,11 @@ main {
 }
 
 @media (max-width: 600px) {
+    .timeline-photo-expand {
+        left: -16px;
+        top: 24px;
+    }
+
     .timeline-photo-expand img {
         width: 280px;
     }

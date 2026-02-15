@@ -769,6 +769,33 @@ main {
     cursor: pointer;
 }
 
+.timeline-dot.has-photo::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid #3a7bc8;
+    transform: translate(-50%, -50%);
+    animation: pulse-ring 2.5s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes pulse-ring {
+    0% {
+        width: 14px;
+        height: 14px;
+        opacity: 0.8;
+    }
+    100% {
+        width: 36px;
+        height: 36px;
+        opacity: 0;
+    }
+}
+
 .timeline-photo-expand {
     display: none;
     position: absolute;

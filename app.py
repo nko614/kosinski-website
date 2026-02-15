@@ -329,7 +329,7 @@ BOOKS = [
 
 @app.route('/apps')
 def apps():
-    return render_template('projects.html', odoo_apps=ODOO_APPS)
+    return render_template('projects.html', odoo_apps=ODOO_APPS, web_apps=WEB_APPS)
 
 
 @app.route('/reading')

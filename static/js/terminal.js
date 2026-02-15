@@ -206,9 +206,11 @@ function handleCommand() {
     inputSpan.textContent = "";
 }
 
-// Desktop keyboard input
-if (!isMobile) {
-    document.addEventListener('keydown', function(e) {
+// Desktop keyboard input — remove any previous listener to prevent SPA duplicates
+if (window._terminalKeydown) {
+    document.removeEventListener('keydown', window._terminalKeydown);
+}
+window._terminalKeydown = function(e) {
         if (e.key === 'Enter') {
             handleCommand();
         } else if (e.key === 'Backspace') {
@@ -254,7 +256,9 @@ if (!isMobile) {
             e.preventDefault();
         }
         terminal.scrollTop = terminal.scrollHeight;
-    });
+};
+if (!isMobile) {
+    document.addEventListener('keydown', window._terminalKeydown);
 }
 
 // Mobile input
@@ -272,12 +276,16 @@ if (isMobile) {
     });
 }
 
-// Focus management
-document.addEventListener('click', function() {
-    if (isMobile) {
-        mobileInput.focus();
+// Focus management — remove previous to prevent SPA duplicates
+if (window._terminalClick) {
+    document.removeEventListener('click', window._terminalClick);
+}
+window._terminalClick = function() {
+    if (isMobile && document.getElementById('mobileInput')) {
+        document.getElementById('mobileInput').focus();
     }
-});
+};
+document.addEventListener('click', window._terminalClick);
 
 terminal.addEventListener('touchstart', function(e) {
     e.preventDefault();

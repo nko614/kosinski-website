@@ -93,7 +93,7 @@ function processCommand(command) {
             addLine("North Buffalo, Buffalo, NY.");
             break;
         case "resume":
-            addLine("Send me an email: nicholas.kosinski614@gmail.com");
+            addLine("Send me an email: nkosinski@ordinconsulting.com");
             break;
         case "birth_city":
         case "birth city":
@@ -116,7 +116,7 @@ function processCommand(command) {
             addLine("Started at Odoo October 2014. Left for NetSuite for ~1.5 years. Saw the other side, came back to where the real potential was.");
             break;
         case "contact":
-            addLine("nko@odoo.com (work) | nicholas.kosinski614@gmail.com (personal)");
+            addLine("nko@odoo.com (work) | nkosinski@ordinconsulting.com (personal)");
             break;
         case "social":
         case "linkedin":
